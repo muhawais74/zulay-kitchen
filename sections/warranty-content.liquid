@@ -1,0 +1,105 @@
+{% style %}
+.warranty__content .h2.title{
+    font-size: 18.0pt; line-height: 115%; font-family: 'Arial',sans-serif;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+.warranty__content .faqs__content h3{
+    font-size: 18.0pt;
+    line-height: 115%;
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
+}
+.warranty__content .faqs__content {
+    margin-top: 50px;
+}
+.warranty__content .faqs__content strong {
+    font-size: 16.0pt; line-height: 115%; font-family: 'Arial',sans-serif;
+}
+.warranty__content .button__wrapper {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+.warranty__content #js-harp-button {
+    color: blue;
+    text-decoration: underline;
+}
+.warranty__content a , .faq__content .accordion__content  p a {
+    color: #0000FF;
+}
+.warranty__content.container {
+    margin-top: 25px;
+}
+.warranty__content .container span[style*="text-decoration:underline"] {
+  text-decoration: none !important;
+}
+{% endstyle %}
+<div class="warranty__content container container--xs">
+    {% content_for 'blocks' %}
+    {% comment %} <h2 class="h2 title">{{ section.settings.heading }}</h2>
+    {{ section.settings.description_first }}
+    <div class="button__wrapper">
+        <button id="js-harp-button">{{section.settings.button_label}}</button>
+        <p>{{section.settings.btn_suffix_text}}</p>
+    </div>
+    {{ section.settings.description_last }}
+    <div class="faqs__content">
+        {{section.settings.warranty_faq}}
+    </div> {% endcomment %}
+</div>
+
+<script type="text/javascript" defer="defer">
+    const harkScript = document.createElement("script");
+    harkScript.src =
+        "https://storage.googleapis.com/prod_harks/sendhark_handler.js?randomstr=" +
+        Date.now();
+    document.body.appendChild(harkScript);
+    harkScript.onload = function () {
+        harkEmbedJs.init("67f55785ee664e7b0fc78d1e", "popup", "js-harp-button");
+    };
+</script>
+{% schema %}
+{
+"name": "Warranty Content",
+"settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "description_first",
+            "label": "Description First"
+        },
+        {
+            "type": "richtext",
+            "id": "description_last",
+            "label": "Description Last"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label"
+        },
+        {
+            "type": "text",
+            "id": "btn_suffix_text",
+            "label": "Button Suffix Text"
+        },
+        {
+            "type": "richtext",
+            "id": "warranty_faq",
+            "label": "Warranty FAQs"
+        }
+    ],
+    "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+    "presets": [
+    {
+        "name": "Warranty Content"
+    }
+]
+}
+{% endschema %}

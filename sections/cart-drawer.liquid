@@ -1,0 +1,257 @@
+<cart-drawer id="cart-drawer" class="cart-drawer drawer {% if cart.empty? %}drawer--center-body{% endif %} color-scheme color-scheme--{{ section.settings.color_scheme.id }}" initial-focus="false" handle-editor-events>
+  <div class="docapp-free-gift-progress"></div>
+  <p class="h4" slot="header">{{ 'cart.general.title' | t }}</p>
+
+  {%- if cart.empty? -%}
+    <p class="h5 text-center">{{ 'cart.general.empty' | t }}</p>
+  {%- else -%}
+    {%- if settings.cart_show_free_shipping_bar -%}
+      {%- render 'free-shipping-bar' -%}
+    {%- endif -%}
+
+    <div class="cart-drawer__items">
+      {%- for line_item in cart.items -%}
+        {%- render 'line-item', line_item: line_item, show_quantity_selector: true -%}
+      {%- endfor -%}
+    </div>
+
+    {%- liquid
+      assign cross_sell_products_count = 0
+
+      for product in section.settings.cross_sell_products
+        assign items_for_product = cart | line_items_for: product
+
+        if items_for_product.size == 0 and product.available
+          assign cross_sell_products_count = cross_sell_products_count | plus: 1
+        endif
+      endfor
+    -%}
+
+    {%- if cross_sell_products_count > 0 -%}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+      {%  style %}
+        .cart-drawer__complementary-products .swiper {
+          width: 100%;
+          height: 100%;
+        }
+
+        .cart-drawer__complementary-products .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .cart-drawer__complementary-products .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .cart-drawer__complementary-products .complementary-products__header {
+          background: #F5EDE6;
+          padding: 10px;
+          justify-content: center;
+        }
+        .cart-drawer__complementary-products .cross__sell-title {
+          font-weight: 600;
+          color: #222222;
+        }
+      {%  endstyle %}
+      <div class="cart-drawer__complementary-products complementary-products">
+        {%- assign carousel_id = 'complementary-products-carousel-' | append: section.id -%}
+
+        {%- if section.settings.cross_sell_title != blank or section.settings.cross_sell_stack_products == false and cross_sell_products_count > 1 -%}
+          <div class="complementary-products__header">
+            <p class="h6 cross__sell-title">{{ section.settings.cross_sell_title }}</p>
+          </div>
+        {%- endif -%}
+
+        {%- liquid
+          capture complementary_products
+            for product in section.settings.cross_sell_products
+              assign products_in_cart = cart.items | where: 'product_id', product.id
+
+              if products_in_cart.size == 0 and product.available
+                render 'product-card', product: product
+              endif
+            endfor
+          endcapture
+        -%}
+
+        {%- if section.settings.cross_sell_stack_products -%}
+          <div class="complementary-products__product-list">
+            {{- complementary_products -}}
+          </div>
+        {%- else -%}
+          <div class="swiper" js-cross-sell-slider>
+            <div class="swiper-wrapper">
+              {% for product in section.settings.cross_sell_products %}
+                {% assign products_in_cart = cart.items | where: 'product_id', product.id %}
+
+                {% if products_in_cart.size == 0 and product.available %}
+                  <div class="swiper-slide">
+                    {% render 'product-card', product: product %}
+                  </div>
+                {%endif%}
+              {% endfor %}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <form action="{{ routes.cart_url }}" method="POST" class="cart-drawer__footer" slot="footer">
+      <input type="hidden" name="attributes[products_mobile_grid_mode]" value="">
+      <input type="hidden" name="attributes[products_desktop_grid_mode]" value="">
+
+      {%- if section.settings.show_cart_note or section.settings.show_shipping_text -%}
+        <div class="v-stack gap-0.5 justify-items-start">
+          {%- if section.settings.show_cart_note -%}
+            {%- assign cart_note_dialog_id = 'cart-note-' | append: section.id -%}
+            <button class="link-faded-reverse" aria-controls="{{ cart_note_dialog_id }}">{{ 'cart.general.add_order_note' | t }}</button>
+
+            <cart-note-dialog id="{{ cart_note_dialog_id }}" class="cart-drawer__order-note">
+              <div class="form">
+                <cart-note class="form-control">
+                  {%- assign order_note = 'cart.general.order_note' | t -%}
+                  {%- assign placeholder = 'cart.general.note_placeholder' | t -%}
+                  {%- render 'input', name: 'note', multiline: 3, label: order_note, value: cart.note, placeholder: placeholder, show_label_as_block: true -%}
+                </cart-note>
+
+                <dialog-close-button class="contents">
+                  <button type="button" class="button">{{ 'cart.general.save_note' | t }}</button>
+                </dialog-close-button>
+              </div>
+            </cart-note-dialog>
+          {%- endif -%}
+
+          {%- if section.settings.show_shipping_text -%}
+            <p class="text-subdued">{{ 'cart.general.taxes_and_shipping_at_checkout' | t }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {% for discount_application in cart.cart_level_discount_applications %}
+        <div class="h-stack justify-start gap-4">
+          <span class="discount-badge text-xs">{%- render 'icon' with 'discount', width: 12 -%} {{- discount_application.title -}}</span>
+          <span class="text-subdued">-{{ discount_application.total_allocated_amount | money }}</span>
+        </div>
+      {% endfor %}
+
+      <div class="button-group">
+        {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
+          {%- assign view_cart = 'cart.general.view_cart' | t -%}
+          {%- render 'button', href: routes.cart_url, content: view_cart, stretch: true -%}
+        {%- endif -%}
+
+        {%- if section.settings.show_checkout_button -%}
+          {%- capture checkout_button -%}
+            {{- 'cart.general.checkout' | t -}}
+
+            {%- if section.settings.show_price_in_checkout_button -%}
+              <span class="cart-drawer__button-price">{{- cart.total_price | money -}}</span>
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- render 'button', type: 'submit', content: checkout_button, name: 'checkout', stretch: true -%}
+        {%- endif -%}
+      </div>
+    </form>
+  {%- endif -%}
+</cart-drawer>
+  {%- if cross_sell_products_count > 0 -%}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', function() {
+        var swiper = new Swiper("[js-cross-sell-slider]", {
+          direction: "horizontal",
+          mousewheel: true,
+          slidesPerView: 1.6,
+          spaceBetween: 30,
+          freeMode: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      })
+      </script>
+  {%  endif %}
+{% schema %}
+{
+  "name": "t:sections.cart_drawer.name",
+  "class": "shopify-section--cart-drawer",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.cart_drawer.page_info"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.cart_drawer.free_shipping_bar_info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_note",
+      "label": "t:sections.cart_drawer.show_cart_note",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_text",
+      "label": "t:sections.cart_drawer.show_shipping_text",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_cart_button",
+      "label": "t:sections.cart_drawer.show_view_cart_button",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_checkout_button",
+      "label": "t:sections.cart_drawer.show_checkout_button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price_in_checkout_button",
+      "label": "t:sections.cart_drawer.show_price_in_checkout_button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.cart_drawer.cross_sell_category"
+    },
+    {
+      "type": "product_list",
+      "id": "cross_sell_products",
+      "label": "t:sections.cart_drawer.cross_sell_products",
+      "info": "t:sections.cart_drawer.cross_sell_products_info",
+      "limit": 10
+    },
+    {
+      "type": "inline_richtext",
+      "id": "cross_sell_title",
+      "label": "t:sections.cart_drawer.cross_sell_heading",
+      "default": "Complete with"
+    },
+    {
+      "type": "checkbox",
+      "id": "cross_sell_stack_products",
+      "label": "t:sections.cart_drawer.cross_sell_stack_products",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

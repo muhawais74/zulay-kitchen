@@ -1,0 +1,85 @@
+{{ 'bundle.css' | asset_url | stylesheet_tag }}
+{%  assign collection_handle = collection.handle %}
+<div class="build__your-bundle section-spacing  container">
+    <div class="bundle__wrapper">
+        <div class="bundle__title-container">
+            {% for m_object in metaobjects.bundle.values %}
+                {% assign collections = m_object.collections %}
+                <div class="title__wrapper h3">
+                    {%  for collection_inner in collections.value %}
+                        <span class="title {% if collection_handle == collection_inner.handle %} active {% endif %}" js-collection-item-head data-collection-handle="{{ collection_inner.handle }}" data-collection-url="{{ collection_inner.url }}">{{ collection_inner.title }}</span>
+                    {%  endfor %}
+                </div>
+            {%  endfor %}
+        </div>
+        <div class="bundle__products-container" js-bundle-products-container data-shop-currency-symbol="{{ cart.currency.symbol }}">
+            {% if collection.products_count > 0 %}
+                {% for product in collection.products %}
+                    {% render 'bundle-products-card' ,product: product , index: forloop.index %}
+                {% endfor %}
+            {% endif %}
+            {% comment %} {% for m_object in metaobjects.bundle.values limit: 1 %}
+                {% assign collections = m_object.collections %}
+
+                {% assign found_collection = nil %}
+
+                {% for collection in collections.value %}
+                    {% if collection.products_count > 0 and found_collection == nil %}
+                    {% assign found_collection = collection %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if found_collection %}
+                    {% for product in found_collection.products %}
+                        {% render 'bundle-products-card' ,product: product %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %} {% endcomment %}
+        </div>
+    </div>
+    <div class="bundle__summary">
+        <div class="maximise__window">
+        </div>
+        <span class="summary__title h3" js-bundle-summary-head>Bundle Summary</span>
+        <product-form>
+            <form method="post" action="{{ routes.cart_add_url }}" id="product-form-bundle-{{ section.id }}" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data">
+                <div class="bundle__summary-box">
+                    <span class="summary__title--inner h6">Selected Products</span>
+                    <div class="items__summary-bundle">
+                        <div class="summary__item dummy">
+                            <div class="img">
+                                <img src="{{ 'image_placeholder_small.jpg' | asset_img_url }}" />
+                            </div>
+                            <div class="info__content">
+                                <span class="product__title">Add a product</span>
+                                <span class="variant__title">Variant</span>
+                            </div>
+                            <div class="item__cta">
+                                <div class="add__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z"/></svg>
+                                </div>
+                                <div class="remove__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM231 231C240.4 221.6 255.6 221.6 264.9 231L319.9 286L374.9 231C384.3 221.6 399.5 221.6 408.8 231C418.1 240.4 418.2 255.6 408.8 264.9L353.8 319.9L408.8 374.9C418.2 384.3 418.2 399.5 408.8 408.8C399.4 418.1 384.2 418.2 374.9 408.8L319.9 353.8L264.9 408.8C255.5 418.2 240.3 418.2 231 408.8C221.7 399.4 221.6 384.2 231 374.9L286 319.9L231 264.9C221.6 255.5 221.6 240.3 231 231z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <buy-button class="buy-buttons " form="product-form-bundle-{{ section.id }}">
+                        <div class="bundle__cart-add">
+                            <button type="submit">Add Bundle To Cart - <span js-bundle-total-price>{{ 0 | money }}</span></button>
+                        </div>
+                    </buy-button>
+                </div>
+                <input type="hidden" name="section-id" value="{{ section.id }}">
+            </form>
+        </product-form>
+    </div>
+</div>
+<script src="{{ 'bundle.js' | asset_url }}" defer></script>
+{% schema %}
+    {
+        "name": "t:sections.bundle.name",
+        "settings": [],
+        "presets": []
+    }
+{% endschema %}

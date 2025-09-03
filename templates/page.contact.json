@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "rich_text_kNQfTj": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_BFm8DF": {
+          "type": "subheading",
+          "settings": {
+            "text": "We're here for you"
+          }
+        },
+        "heading_rEM9xP": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Need help?</strong>",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_wyVhaB": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>The best way to get in touch with our team is by sending us a message below. Whether you have a question, need assistance with a product, or just want to share feedback - we’re always happy to hear from you.Our office hours are Monday through Friday, 9am to 6pm EST, but you can reach out anytime. We typically respond within 24–48 hours and will do our best to get back to you as quickly as possible.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_BFm8DF",
+        "heading_rEM9xP",
+        "richtext_wyVhaB"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "contact-form": {
+      "type": "contact",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "subheading": "",
+        "title": "Contact",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_kNQfTj",
+    "contact-form"
+  ]
+}

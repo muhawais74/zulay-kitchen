@@ -1,0 +1,75 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+MEGA MENU IMAGES COMPONENT
+----------------------------------------------------------------------------------------------------------------------
+
+Render the images for a given mega-menu
+
+********************************************
+Supported variables
+********************************************
+
+* context: can be "menu" or "sidebar". This info slightly changes the alignment
+* block: the block containing all the information about the menu to render
+{%- endcomment -%}
+{% for collection in block.settings.collections_list %}
+  {%- capture image_content -%}
+    <div class="image-container_promo">
+    {% if collection.metafields.custom.menu_media != blank %}
+        {{- collection.metafields.custom.menu_media | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '315px', widths: '315,630,945', class: 'zoom-image group-hover:zoom' -}}
+    {%- else collection.featured_image -%}
+        {{- collection.featured_image | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '315px', widths: '315,630,945', class: 'zoom-image group-hover:zoom' -}}
+    {%- endif -%}
+      <div class="v-stack text-center title_promo {% if context == 'menu' %}gap-2.5{% else %}gap-0.5{% endif %}">
+          <p class="h6">{{ collection.title }}</p>
+      </div>
+      </div>
+  {%- endcapture -%}
+   {%- if image_content != blank -%}
+      <a href="{{ collection.url }}" class="v-stack justify-items-center gap-4 sm:gap-5 group">
+        {{- image_content -}}
+      </a>
+  {%- endif -%}
+{%  endfor %}
+
+{% comment %}
+
+{%- for i in (1..2) -%}
+  {%- assign image_setting = 'image_' | append: i -%}
+  {%- assign heading_setting = 'image_' | append: i | append: '_heading' -%}
+  {%- assign text_setting = 'image_' | append: i | append: '_text' -%}
+  {%- assign link_setting = 'image_' | append: i | append: '_link' -%}
+
+  {%- capture image_content -%}
+    {%- if block.settings[image_setting] -%}
+      <div class="overflow-hidden">
+        {{- block.settings[image_setting] | image_url: width: block.settings[image_setting].width | image_tag: loading: 'lazy', sizes: '315px', widths: '315,630,945', class: 'zoom-image group-hover:zoom' -}}
+      </div>
+    {%- endif -%}
+
+    {%- if block.settings[heading_setting] != blank or block.settings[text_setting] != blank -%}
+      <div class="v-stack text-center {% if context == 'menu' %}gap-2.5{% else %}gap-0.5{% endif %}">
+        {%- if block.settings[heading_setting] != blank -%}
+          <p class="h6">{{ block.settings[heading_setting] }}</p>
+        {%- endif -%}
+
+        {%- if block.settings[text_setting] != blank -%}
+          <p class="smallcaps text-xs text-subdued">{{ block.settings[text_setting] }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  {%- endcapture -%}
+
+  {%- if image_content != blank -%}
+    {%- if block.settings[link_setting] != blank -%}
+      <a href="{{ block.settings[link_setting] }}" class="v-stack justify-items-center gap-4 sm:gap-5 group">
+        {{- image_content -}}
+      </a>
+    {%- else -%}
+      <div class="v-stack justify-items-center gap-4 sm:gap-5 group">
+        {{- image_content -}}
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+ {% endcomment %}

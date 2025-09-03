@@ -1,0 +1,64 @@
+{%- liquid
+    assign matched_product_option = nil
+    assign color_label_list = 'general.label.color' | t | replace: ', ', ',' | downcase | split: ','
+    
+    # First, we try to find an option named explicitly "color" in the store's language
+    for color_label in color_label_list
+        if product.options_by_name[color_label] != blank
+        assign matched_product_option = product.options_by_name[color_label]
+        break
+        endif
+    endfor
+
+    # If we didn't find an option named "color", we try to find an option that has swatches, as this is probably
+    # the color option that the merchant want to use for swatches
+    if matched_product_option == blank
+        for product_option in product.options_with_values
+        assign values_with_swatch = product_option.values | where: 'swatch'
+
+        if values_with_swatch.size > 0
+            assign matched_product_option = product_option
+            break
+        endif
+        endfor
+    endif
+-%}
+<div class="bundle_card__wrapper" js-bundle-product-card data-variant-title="{{ product.selected_or_first_available_variant.title }}" data-variant-id="{{ product.selected_or_first_available_variant.id }}" data-product-title="{{ product.title }}"
+    data-product-image="{{ product.featured_image | image_url: width: 1200 }}" data-price="{{ product.selected_or_first_available_variant.price | money_without_currency }}" data-compare-price="{{ product.selected_or_first_available_variant.compare_at_price | money_without_currency }}" data-product-handle="{{ product.handle }}" data-product-url="{{ product.url }}">
+    
+    <div class="bundle_card__image">
+        <img src="{{ product.featured_image | image_url: width: 1200 }}">
+    </div>
+    <div class="bundle_card__content">
+        <a href="{{ product.url }}" class="product__title-bundle h6">{{ product.title }}</a>
+        <div class="price__wrapper">
+            <span class="product__price-bundle">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
+            <span class="product__price-bundle compare__price">{% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %} {{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }} {% endif %}</span>
+        </div>
+        <div class="color__swatched-bundle">
+            <fieldset class="h-stack wrap justify-center gap-1">
+                <legend class="sr-only">{{ matched_product_option.name }}</legend>
+                
+                {%- capture param_name -%}swatch-{{ quick_buy_context }}-{{ section.id }}-{{ block.id }}-{{ product.id }}-{{ matched_product_option.position }}{%- endcapture -%}
+
+                {%- liquid
+                for option_value in matched_product_option.values
+                    render 'option-value', type: 'swatch', option_value: option_value, param_name: param_name, option_position: matched_product_option.position, output_variant_media: true, size: 'sm'
+                endfor
+                -%}
+            </fieldset>
+        </div>
+        <button class="bundle__product-cta" js-add-to-bundle-btn>
+            Add To Bundle
+        </button>
+        <div class="bundle__quantity-picker">
+            <button class="quantity-btn subtraction" >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320z"/></svg>
+            </button>
+            <input type="number" class="quantity-input" value="1" min="1" id="quantity-{{ product.handle }}--{{ index }}" readonly>
+            <button class="quantity-btn addition" >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z"/></svg>
+            </button>
+        </div>
+    </div>
+</div>

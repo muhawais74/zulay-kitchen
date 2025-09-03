@@ -1,0 +1,314 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+MEGA MENU COMPONENT
+----------------------------------------------------------------------------------------------------------------------
+
+Render the mega-menu. The mega-menu is a kind of menu optimized for showing a large number of items into several
+columns.
+
+********************************************
+Supported variables
+********************************************
+
+* link: the link from which we need to render the mega-menu. The link must always be a second level link, but it can
+also be empty (no links), which is the case if the merchant only want to show images, for instance.
+* block: the block containing all the information about the menu to render
+{%- endcomment -%}
+{% style %}
+.mega-menu {
+  height: 75vh;
+  display: flex;
+}
+.mega-menu .mega-menu__promo {
+  height: 100%;
+  /* overflow-y: scroll; */
+  overflow: hidden;
+  justify-content: center;
+  flex: 50%;
+}
+.mega-menu .mega-menu__linklist {
+  flex: 50%;
+  border-right: 2px solid black;
+  height: 100%;
+  overflow-y: scroll;
+  flex-direction: row;
+}
+.mega-menu .mega-menu__linklist {
+}
+.mega-menu__promo .image-container_promo {
+  width: 100%;
+  aspect-ratio: 1 / 0;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.mega-menu__promo  .coll__list > a {
+  flex: 0 0 48%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* max-width: 261px;  */
+}
+.mega-menu__promo .image-container_promo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mega-menu .mega_menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 0;
+}
+.mega-menu .mega_menu-list li{
+  display: flex;
+  gap: 30px;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+
+}
+.mega-menu .mega_menu-list .link__image {
+  width: 50px;
+}
+.mega_menu-item {
+/* width:100%; */
+  flex:1 80%;
+  overflow-Y: scroll;
+  height:100%;
+  scrollbar-width: thin;
+  position: relative;
+}
+.vertical__line {
+  height: 100%;
+  background-color: black;
+  width: 5px;
+}
+/* .mega_menu-item::after {
+content: "";
+top: 0;
+bottom: 0;
+width: 2px;
+position: absolute;
+right: 0;
+background-color: black;
+
+} */
+.mega-menu .mega_menu-list li{
+font-weight: 400;
+font-size: max(1rem, 1.1111111111vw);
+line-height: 1.4;
+letter-spacing: .005em;
+text-transform: uppercase;
+display: flex;
+color: #303030;
+transition: opacity .15s ease-in-out;
+padding: max(1rem, 1.1111111111vw) 0 max(1rem, 1.1111111111vw) 0;
+justify-content: space-between;
+align-items: center;
+}
+
+.mega-menu a {
+line-height: inherit;
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+.mega__menu-item:hover {
+opacity: .4;
+}
+.mega-menu .coll__list {
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5px;
+  height: 100%;
+  overflow-y: auto;
+  /* width: fit-content; */
+} 
+.mega-menu .mega-menu__promo>* {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  /* display: grid;
+  grid-template-columns: 1fr; */
+  width: 100%;
+  height: 100%;
+  min-width: unset;
+  max-width: unset;
+}
+.mega-menu__promo .title_promo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-self: baseline;
+}
+.mega-menu__promo .image-container_promo .title_promo .h6 {
+  background: #877f7f94;
+  font-size: 16px;
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.mega-menu__promo .image-container_promo .overflow-hidden {
+  /* min-width: 248px; */
+  margin-bottom: unset;
+  height: 100%;
+}
+.mega-menu__promo span.coll__title {
+  font-size: 20px;
+  font-weight: 600;
+} 
+.header__primary-nav  .mega-menu  .mega-menu__linklist li{
+  display: flex;
+  justify-content: space-between;
+  min-width: 100%;
+  border-bottom: 1px solid black;
+  padding: 15px;
+  font-weight: 600;
+} 
+.header__primary-nav .mega-menu .mega-menu__linklist li img {
+  width: 50px;
+}
+ @media screen and (min-width: 2000px) {
+  .header__primary-nav .mega-menu .mega-menu__linklist li img {
+    width: 150px;
+  }
+  .header__primary-nav .mega-menu__linklist .link__title {
+    font-size: 20px;
+  }
+}
+
+.header__primary-nav-item[data-title="Clearance"] a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+}
+.header__primary-nav-item[data-title="Bundle"] a {
+  font-weight: 700;
+}
+.header__primary-nav-item[data-title="Clearance"] {
+  color: #dd2020;
+}
+.coll__list > a {
+    flex: 0 0 50%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+{% endstyle %}
+
+<div class="mega-menu {% if block.settings.images_position == 'left' %}mega-menu--reverse{% endif %}" {{
+  block.shopify_attributes }}>
+  {% for block in section.blocks %}
+  {% comment %} {%- assign menu_first = block.settings.menu_first -%} {% endcomment %}
+  {% comment %} {%- assign menu_second = block.settings.menu_second -%} {% endcomment %}
+  {% comment %} <div class="mega_menu-item">
+
+    {%- if menu_first.links.size > 0 -%}
+    <ul class="mega_menu-list">
+      {% for link in menu_first.links %}
+      <a href="{{ link.url }}" class="mega__menu-item">
+        {% if link.object.url contains "/collections/" %}
+          <li>
+            {{ link.title }}
+            {% if link.object.metafields.custom.menu_media != blank %}
+              {{ link.object.metafields.custom.menu_media | image_url: width: 300, height: auto | image_tag: class: 'link__image' }}
+            {% else %}
+              {{ link.object.featured_image | image_url: width: 300, height: auto | image_tag: class: 'link__image' }}
+            {% endif %}
+          </li>
+        {% elsif link.object.url contains "/products/" %}
+          <li>
+            {{ link.title }}
+              {{ link.object.featured_image | image_url: width: 300, height: auto | image_tag: class: 'link__image' }}
+          </li>
+        {% endif %}
+      </a>
+      {% endfor %}
+    </ul>
+    {%- endif -%}
+
+
+  </div> {% endcomment %}
+  {% endfor %}
+  {% comment %} <div class="vertical__line"></div> {% endcomment %}
+
+  {%- if link.levels > 0 -%}
+  <ul class="mega-menu__linklist unstyled-list">
+    {%- for sub_link in link.links -%}
+    {% if sub_link.title != blank %}
+      <li class="v-stack justify-items-start gap-5">
+      {% comment %} <a href="{{ sub_link.url }}" class="h6">{{ sub_link.title }}</a> {% endcomment %}
+      <a href="{{ sub_link.url }}" class="mega__menu-item">
+          {% if sub_link.object.url contains "/collections/" %}
+              <span class="link__title">
+                {{ sub_link.title }}
+              </span>
+              {% if sub_link.object.metafields.custom.menu_media != blank %}
+                {{ sub_link.object.metafields.custom.menu_media | image_url: width: 300, height: auto | image_tag: class: 'link__image' }}
+              {% else %}
+                {{ sub_link.object.featured_image | image_url: width: 300, height: auto | image_tag: class: 'link__image' }}
+              {% endif %}
+          {% elsif sub_link.object.url contains "/products/" %}
+              <span class="link__title">
+                {{ sub_link.title }}
+              </span>
+                {{ sub_link.object.featured_image | image_url: width: 300, height: auto | image_tag: class: 'link__image' }}
+          {% elsif sub_link.object.url contains "/pages/" %}
+            <span class="link__title">
+              {{ sub_link.title }}
+            </span>
+               {% if sub_link.object.metafields.custom.menu_media != blank %}
+                {{ sub_link.object.metafields.custom.menu_media | image_url: width: 300, height: auto | image_tag: class: 'link__image' }}
+               {%  endif %}
+          {% else %}
+              <span class="link__title">
+                {{ sub_link.title }}
+              </span>
+          {% endif %}
+
+          {%- if sub_link.links.size > 0 -%}
+          <ul class="v-stack gap-2.5 unstyled-list">
+            {%- for sub_sub_link in sub_link.links -%}
+            <li>
+              <a href="{{ sub_sub_link.url }}" class="link-faded">{{ sub_sub_link.title }}</a>
+            </li>
+            {%- endfor -%}
+          </ul>
+          {%- endif -%}
+          </a>
+        </li>
+    {% endif %}
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
+  {% comment %} <div class="vertical__spacer"></div> {% endcomment %}
+  {%- capture mega_menu_content -%}
+  {%- render 'mega-menu-images', context: 'menu', block: block -%}
+  {%- endcapture -%}
+  {%- if mega_menu_content != blank -%}
+  <div class="mega-menu__promo">
+    <div class="coll__content-wrapper">
+      <div class="mega__menu-collections--title">
+        <span class="coll__title">
+          {{ block.settings.collections_list_title }}
+        </span>
+      </div>
+      <div class="coll__list">
+        {{- mega_menu_content -}}
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+</div>

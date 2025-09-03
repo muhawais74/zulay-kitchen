@@ -1,0 +1,225 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "collections": [],
+        "collections_per_row_mobile": "1",
+        "collections_per_row_desktop": 3,
+        "image_size": "auto",
+        "content_position": "place-self-end-start text-start",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "featured_collections_wK6pQn": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_zJ6qjm": {
+          "type": "collection",
+          "settings": {
+            "collection": "charcuterie-essentials",
+            "products_count": 8,
+            "title": "charcuterie essentials",
+            "link_url": "shopify://collections/charcuterie-essentials",
+            "link_text": "shop all"
+          }
+        }
+      },
+      "block_order": [
+        "collection_zJ6qjm"
+      ],
+      "name": "t:sections.featured_collections.presets.featured_collections.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "shop ingredients"
+      }
+    },
+    "collection_list_T6g3yh": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_WkLRbx": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "spices-seasoning",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "Spices & seasoning",
+            "button_link": "shopify://collections/spices-seasoning",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_EeMEFT": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "sports-supplements",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "sports supplements",
+            "button_link": "shopify://collections/sports-supplements",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_d9VmxX": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "superfoods",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "superfoods",
+            "button_link": "shopify://collections/superfoods",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_WkLRbx",
+        "collection_EeMEFT",
+        "collection_d9VmxX"
+      ],
+      "name": "t:sections.collection_list.presets.collection_list.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": false,
+        "space_items": true,
+        "stack_collections": true,
+        "collections_per_row_mobile": "1",
+        "collections_per_row_desktop": 3,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "collection_list_WPFghE": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_NkXHYX": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "nutritional-foods",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "NUtritional Foods",
+            "button_link": "shopify://collections/nutritional-foods",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_dNNHpE": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "powder-mixes",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "Powder mixes",
+            "button_link": "shopify://collections/powder-mixes",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_MhY3zC": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "protein",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "PROTEIN",
+            "button_link": "shopify://collections/protein",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_NkXHYX",
+        "collection_dNNHpE",
+        "collection_MhY3zC"
+      ],
+      "name": "t:sections.collection_list.presets.collection_list.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": false,
+        "space_items": true,
+        "stack_collections": true,
+        "collections_per_row_mobile": "1",
+        "collections_per_row_desktop": 3,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "newsletter_pWUfyM": {
+      "type": "newsletter",
+      "name": "t:sections.newsletter.presets.newsletter.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "subheading": "Keep me updated",
+        "title": "Newsletter",
+        "content": "<p>A short sentence describing what someone will receive by subscribing.</p>",
+        "button_text": "Subscribe",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_collections_wK6pQn",
+    "collection_list_T6g3yh",
+    "collection_list_WPFghE",
+    "newsletter_pWUfyM"
+  ]
+}
