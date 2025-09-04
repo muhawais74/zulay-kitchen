@@ -6044,6 +6044,12 @@ product-rerender {
   inset-block-start: 3px;
   inset-inline-end: 3px;
 }
+scroll-carousel:not(.adaptive-height) .product-gallery__media {
+  height: 100%;
+}
+scroll-carousel:not(.adaptive-height)  .product-gallery__media video-media{
+  height: 100%;
+}
 
 @media screen and (max-width: 999px) {
   .product-gallery__carousel-with-arrows {
