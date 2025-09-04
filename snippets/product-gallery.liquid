@@ -119,7 +119,7 @@ only way to do it on Shopify right now.
         </carousel-prev-button>
       {%- endif -%}
 
-      <scroll-carousel adaptive-height id="{{ product_gallery_carousel_id }}" class="product-gallery__carousel scroll-area {% unless mobile_controls == 'arrows' %}full-bleed md:unbleed{% endunless %}" role="region">
+      <scroll-carousel {% if adaptive_media == "adaptive" %} adaptive-height {% endif %} id="{{ product_gallery_carousel_id }}" class="product-gallery__carousel scroll-area {% unless mobile_controls == 'arrows' %}full-bleed md:unbleed{% endunless %} {% if adaptive_media == "adaptive" %} adaptive-height {% endif %} " role="region">
         {%- if product != blank -%}
           {%- liquid
             capture sizes

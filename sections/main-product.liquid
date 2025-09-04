@@ -124,7 +124,9 @@
               enable_media_autoplay: section.settings.enable_media_autoplay,
               enable_video_looping: section.settings.enable_video_looping,
               enable_image_zoom: section.settings.enable_image_zoom,
-              max_image_zoom_level: section.settings.max_image_zoom_level -%}
+              max_image_zoom_level: section.settings.max_image_zoom_level,
+              adaptive_media: section.settings.adaptive_media
+              -%}
         {%- endif -%}
 
         {%- render 'product-info', 
@@ -347,6 +349,22 @@ quick buy information in a template, that will be extracted in JS, which ensures
       "type": "header",
       "content": "t:sections.main_product.media_category",
       "info": "t:sections.main_product.media_category_info"
+    },
+    {
+      "type": "select",
+      "id": "adaptive_media",
+      "label": "t:sections.main_product.image_size",
+      "options": [
+        {
+          "value": "adaptive",
+          "label": "t:sections.main_product.adaptive_height"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.main_product.full_height"
+        }
+      ],
+      "default": "adaptive"
     },
     {
       "type": "select",

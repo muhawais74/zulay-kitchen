@@ -1106,6 +1106,9 @@
       "center_basic_info": "Center basic info on mobile",
       "center_basic_info_info": "Includes title, vendor, price and rating.",
       "media_category": "Media",
+      "image_size": "Image Size",
+      "adaptive_height":"Adaptive Height",
+      "full_height": "Full Height",
       "media_category_info": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media).",
       "desktop_media_layout": "Desktop media layout",
       "desktop_media_layout_options": {
