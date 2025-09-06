@@ -71,7 +71,7 @@
     endif
   %}
 
-  <body class="{{ features_class }} color-scheme color-scheme--{{ settings.default_color_scheme.id }} template-suffix-{{ template.suffix }}">
+  <body class="{{ features_class }} color-scheme color-scheme--{{ settings.default_color_scheme.id }} template-name--{{ template.name }} template-suffix-{{ template.suffix }}">
     {%- render 'shadow-dom-templates' -%}
 
     <loading-bar class="loading-bar" aria-hidden="true"></loading-bar>

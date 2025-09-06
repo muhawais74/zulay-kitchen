@@ -6050,7 +6050,7 @@ scroll-carousel:not(.adaptive-height) .product-gallery__media {
 scroll-carousel:not(.adaptive-height)  .product-gallery__media video-media{
   height: 100%;
 }
-.product .rounded-full {
+.template-name--product .rounded-full {
   outline: 1px solid #000;
   outline-offset: 1px;
 }
