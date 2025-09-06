@@ -6050,7 +6050,10 @@ scroll-carousel:not(.adaptive-height) .product-gallery__media {
 scroll-carousel:not(.adaptive-height)  .product-gallery__media video-media{
   height: 100%;
 }
-
+.product .rounded-full {
+  outline: 1px solid #000;
+  outline-offset: -2px;
+}
 @media screen and (max-width: 999px) {
   .product-gallery__carousel-with-arrows {
     align-items: center;
