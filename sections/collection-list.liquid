@@ -91,7 +91,11 @@
 
                 {%- if image != blank -%}
                   {% comment %} ,1000,1200,1400,1600,1800,2000,2200,2400 {% endcomment %}
-                  {{- image | image_url: width: image.width | image_tag: sizes: sizes, widths: '200,300,400,500,600,800', class: 'zoom-image group-hover:zoom', loading: 'lazy', draggable: 'false' -}}
+                   {% if forloop.index < 3 %}
+                     {{- image | image_url: width: image.width | image_tag: sizes: sizes, widths: '200,300,400,500,600,800', class: 'zoom-image group-hover:zoom', draggable: 'false', fetchpriority:'high' -}}
+                   {% else %}
+                     {{- image | image_url: width: image.width | image_tag: sizes: sizes, widths: '200,300,400,500,600,800', class: 'zoom-image group-hover:zoom', loading: 'lazy', draggable: 'false' -}}
+                   {% endif %}
                 {%- else -%}
                   {%- capture collection_placeholder -%}{%- cycle 'collection-1', 'collection-2', 'collection-3' -%}{%- endcapture -%}
                   {{- collection_placeholder | placeholder_svg_tag: 'placeholder zoom-image group-hover:zoom' | replace: '<svg', '<svg preserveAspectRatio="xMinYMin slice"' -}}
