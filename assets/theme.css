@@ -6052,7 +6052,7 @@ scroll-carousel:not(.adaptive-height)  .product-gallery__media video-media{
 }
 .product .rounded-full {
   outline: 1px solid #000;
-  outline-offset: -2px;
+  outline-offset: 1px;
 }
 @media screen and (max-width: 999px) {
   .product-gallery__carousel-with-arrows {
