@@ -139,8 +139,21 @@ may have important consequence on the section itself.
             {{- slide -}}
         </div>
     {%- endif -%}
+    {%- if section.settings.show_next_section_button -%}
+      <button data-action="navigate-next" class="slideshow__next-section-button circle-button circle-button--lg hover:animate-icon-block" js-scroll-bottom-navigation>
+        <span class="sr-only">{{ 'general.accessibility.navigate_to_next_section' | t }}</span>
+        {%- render 'icon' with 'arrow-down' -%}
+      </button>
+    {%- endif -%}
 </div>
-
+<script defer>
+    document.querySelector('[js-scroll-bottom-navigation]')?.addEventListener('click', function() {
+        this.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    })
+</script>
 {% schema %}
 {
   "name": "Hero Banner",
