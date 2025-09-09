@@ -81,7 +81,7 @@
           "type": "question",
           "settings": {
             "question": "Do you have a satisfaction guarantee?",
-            "answer": "<p>Absolutely. Every product is backed by our <strong>Zulay Guarantee</strong>. If something isn’t working out, let us know and we’ll replace it, refund it, or find a solution that leaves you happy.You can read more about our warranty here: <a href=\"https://www.zulaykitchen.com/pages/warranty?utm_source=chatgpt.com\"><strong>Zulay Kitchen Warranty</strong></a>.</p>"
+            "answer": "<p>Absolutely. Every product is backed by our <strong>Zulay Guarantee</strong>. If something isn’t working out, let us know and we’ll replace it, refund it, or find a solution that leaves you happy.You can read more about our warranty here: <a href=\"https://www.zulaykitchen.com/pages/warranty\"><strong>Zulay Kitchen Warranty</strong></a>.</p>"
           }
         },
         "question_MVPBYd": {
