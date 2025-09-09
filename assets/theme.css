@@ -5223,7 +5223,12 @@ product-rerender {
   overflow-y:unset;
   height: 50vh;
 }
-
+.mega-menu .mega-menu__linklist a.mega__menu-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .mega-menu--reverse {
   flex-direction: row-reverse;
 }
