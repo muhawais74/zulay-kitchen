@@ -92,6 +92,54 @@
         "border_color": ""
       }
     },
+    "rich_text_RiG3ja": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_XDJAQa": {
+          "type": "subheading",
+          "settings": {
+            "text": "Kitchen Happiness"
+          }
+        },
+        "heading_GrXPpk": {
+          "type": "heading",
+          "settings": {
+            "text": "Kitchen Gadgets",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_aPWzcP": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Welcome to ZulayKitchen.com, your trusted destination for stylish, practical, and affordable kitchen gadgets designed to make cooking simple, fast, and joyful. Inspired by the strength of family and real cooking moments, Zulay Kitchen offers a thoughtfully curated collection of high-quality tools—from milk frothers and coffee mixers to kitchen utensils and lemon pressers—that fit perfectly into every home and lifestyle. Our products are crafted for durability, ease of use, and performance, backed by a lifetime warranty and dedicated customer support. Whether prepping a quick meal or brewing your favorite coffee, Zulay Kitchen helps you spend less time in the kitchen and more time with loved ones. Shop now for exclusive deals, bundle discounts, and fast, reliable shipping directly from ZulayKitchen.com—the kitchen happiness guarantee.</p>"
+          }
+        },
+        "button_UFDAck": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Collections",
+            "url": "shopify://collections",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_XDJAQa",
+        "heading_GrXPpk",
+        "richtext_aPWzcP",
+        "button_UFDAck"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
     "collection-list": {
       "type": "collection-list",
       "blocks": {
@@ -509,6 +557,7 @@
   "order": [
     "slideshow",
     "hero_banner_xGEbTU",
+    "rich_text_RiG3ja",
     "collection-list",
     "featured_product_6hNNQq",
     "featured-collections",
