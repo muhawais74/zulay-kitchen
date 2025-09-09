@@ -53,7 +53,7 @@
           "type": "question",
           "settings": {
             "question": "What if I receive a damaged item?",
-            "answer": "<p>If your order arrives damaged or defective, don’t worry, we’ll make it right. Just send us a photo of the item and your order details by contacting our support team at <a href=\"http://www.zulaykitchen.com/contact-us\"><strong>www.zulaykitchen.com/contact-us</strong></a>. We’ll send you a replacement right away, as long as you can provide proof of purchase. You can read more about our warranty here: <a href=\"https://www.zulaykitchen.com/pages/warranty?utm_source=chatgpt.com\"><strong>Zulay Kitchen Warranty</strong></a>.</p>"
+            "answer": "<p>If your order arrives damaged or defective, don’t worry, we’ll make it right. Just send us a photo of the item and your order details by contacting our support team at <a href=\"http://www.zulaykitchen.com/contact-us\"><strong>www.zulaykitchen.com/contact-us</strong></a>. We’ll send you a replacement right away, as long as you can provide proof of purchase. You can read more about our warranty here: <a href=\"https://www.zulaykitchen.com/pages/warranty\"><strong>Zulay Kitchen Warranty</strong></a>.</p>"
           }
         },
         "question_mXntht": {
