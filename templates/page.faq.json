@@ -15,7 +15,9 @@
         "category": {
           "type": "category",
           "settings": {
-            "title": "Order"
+            "title": "Order",
+            "icon": "none",
+            "icon_width": 16
           }
         },
         "question-1": {
@@ -38,15 +40,135 @@
             "question": "Any question?",
             "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
           }
+        },
+        "category_ii4jUJ": {
+          "type": "category",
+          "settings": {
+            "title": "General FAQs",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_LAXnkq": {
+          "type": "question",
+          "settings": {
+            "question": "What if I receive a damaged item?",
+            "answer": "<p>If your order arrives damaged or defective, don’t worry, we’ll make it right. Just send us a photo of the item and your order details by contacting our support team at <a href=\"http://www.zulaykitchen.com/contact-us\"><strong>www.zulaykitchen.com/contact-us</strong></a>. We’ll send you a replacement right away, as long as you can provide proof of purchase. You can read more about our warranty here: <a href=\"https://www.zulaykitchen.com/pages/warranty?utm_source=chatgpt.com\"><strong>Zulay Kitchen Warranty</strong></a>.</p>"
+          }
+        },
+        "question_mXntht": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer bundle discounts?",
+            "answer": "<p>Yes! We love helping you save while stocking your kitchen. We often run special bundle deals and seasonal promotions. Keep an eye on our featured deals page on our website and sign up for our email list so you don’t miss them.</p>"
+          }
+        },
+        "question_nAWL6P": {
+          "type": "question",
+          "settings": {
+            "question": "What happens if my order is lost or delayed?",
+            "answer": "<p>If your package seems delayed, check your tracking number first. Still not seeing updates? Reach out to us at <a href=\"http://www.zulaykitchen.com/contact-us\"><strong>http://www.zulaykitchen.com/contact-us</strong></a> with your order number, and we’ll help track it down. If it’s confirmed lost, we’ll send a replacement or issue a refund.</p>"
+          }
+        },
+        "question_fLJKGK": {
+          "type": "question",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We want you to love your purchase. If you’re not completely satisfied, you can return your order within <strong>30 days</strong> for a full refund. Just contact our support team to start the process—we’ll provide easy instructions.</p>"
+          }
+        },
+        "question_CfcDt3": {
+          "type": "question",
+          "settings": {
+            "question": "Do you have a satisfaction guarantee?",
+            "answer": "<p>Absolutely. Every product is backed by our <strong>Zulay Guarantee</strong>. If something isn’t working out, let us know and we’ll replace it, refund it, or find a solution that leaves you happy.You can read more about our warranty here: <a href=\"https://www.zulaykitchen.com/pages/warranty?utm_source=chatgpt.com\"><strong>Zulay Kitchen Warranty</strong></a>.</p>"
+          }
+        },
+        "question_MVPBYd": {
+          "type": "question",
+          "settings": {
+            "question": "Where is Zulay Kitchen based?",
+            "answer": "<p>We’re a family-owned business based in <strong>Florida, USA</strong>, named after our mom, Zulay. Our products ship from U.S. warehouses so they reach you quickly.</p>"
+          }
+        },
+        "question_bXKh6W": {
+          "type": "question",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>Yes! We proudly ship worldwide. Shipping rates and times vary depending on location, and you’ll see the details at checkout.</p>"
+          }
+        },
+        "question_WQmHer": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>For U.S. orders, shipping usually takes <strong>3–7 business days</strong>. International orders may take longer depending on the destination and customs. You’ll get a tracking number as soon as your order ships.</p>"
+          }
+        },
+        "question_RyBayE": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer gift cards?",
+            "answer": "<p>Yes, digital gift cards are available and make the perfect gift for the home cook or coffee lover in your life. You can find them right on our website.</p>"
+          }
+        },
+        "question_ineG89": {
+          "type": "question",
+          "settings": {
+            "question": "Can I change or cancel my order after placing it?",
+            "answer": "<p>If you need to make changes, contact us at <a href=\"http://www.zulaykitchen.com/contact-us\"><strong>http://www.zulaykitchen.com/contact-us</strong></a> as soon as possible. We’ll do our best to update or cancel before your order ships.</p>"
+          }
+        },
+        "question_z68Tcy": {
+          "type": "question",
+          "settings": {
+            "question": "How do I register my product for warranty?",
+            "answer": "<p>Registering is quick and easy! Just <a href=\"http://www.zulaykitchen.com/contact-us\"><strong>click here</strong></a> to register your product for our warranty. This helps us process any future claims faster and ensures you’re fully covered under our Zulay Guarantee.</p>"
+          }
+        },
+        "question_Kmertm": {
+          "type": "question",
+          "settings": {
+            "question": "Do you sell on Amazon?",
+            "answer": "<p>Yes, you can find many Zulay Kitchen products on Amazon, but you’ll always get the best deals, bundles, and offers directly on our official website.</p>"
+          }
+        },
+        "question_aWjFUK": {
+          "type": "question",
+          "settings": {
+            "question": "How do I contact customer support?",
+            "answer": "<p>You can reach us anytime at <a href=\"http://www.zulaykitchen.com/contact-us\"><strong>http://www.zulaykitchen.com/contact-us</strong></a>. Our friendly team is here to help with any questions or concerns.</p>"
+          }
         }
       },
       "block_order": [
         "category",
         "question-1",
         "question-2",
-        "question-3"
+        "question-3",
+        "category_ii4jUJ",
+        "question_LAXnkq",
+        "question_mXntht",
+        "question_nAWL6P",
+        "question_fLJKGK",
+        "question_CfcDt3",
+        "question_MVPBYd",
+        "question_bXKh6W",
+        "question_WQmHer",
+        "question_RyBayE",
+        "question_ineG89",
+        "question_z68Tcy",
+        "question_Kmertm",
+        "question_aWjFUK"
       ],
-      "settings": {}
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "Need help?",
+        "title": "Frequently Asked Questions",
+        "content": ""
+      }
     }
   },
   "order": [
