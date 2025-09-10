@@ -1,0 +1,43 @@
+{% if product.metafields.custom.faqs_list != blank %}
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+<div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} ">
+    <div class="container container--md">
+        <div class="title">
+            <h3>{{  section.settings.title }}</h3>
+        </div>
+      <div class="accordion">
+        {% for faq_item in product.metafields.custom.faqs_list.value %}
+            {% render 'accordion', title: faq_item.question, content: faq_item.answer  %}
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endif %}
+{% schema %}
+{
+    "name":"PDP FAQs",
+    "disabled_on": {
+        "templates": ["collection","index","page","cart"],
+        "groups": ["header", "custom.overlay"]
+    },
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "t:global.colors.scheme",
+            "default": "scheme-1"
+        },
+        {
+            "type": "text",
+            "id":"title",
+            "label": "Title"
+        }
+    ],
+    "presets": [
+        {
+            "name": "PDP FAQs"
+        }
+    ]
+}
+{% endschema %}
