@@ -40,12 +40,28 @@
         "disabled": false,
         "settings": {}
       },
+      "13951170544780599758": {
+        "type": "shopify://apps/tapita-seo-speed/blocks/app-embed/cd37ca7a-40ad-4fdc-afd3-768701482209",
+        "disabled": true,
+        "settings": {
+          "hide_price": false
+        }
+      },
+      "10830403595879607806": {
+        "type": "shopify://apps/reviews-io/blocks/reviewsio-core/92a082e5-b297-4e88-b428-ac96cbc505f9",
+        "disabled": true,
+        "settings": {
+          "url_key": "zulay-reviews-io",
+          "lang": "auto",
+          "enable_syndication": false
+        }
+      },
       "15316669992541710076": {
         "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-snippet/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": false,
+        "disabled": true,
         "settings": {
-          "star": "#000",
-          "text_color": "#333",
+          "star": "#000000",
+          "text_color": "#333333",
           "snippet_mode": "default",
           "text": "Reviews",
           "line_break": false,
@@ -59,7 +75,7 @@
       },
       "16274361319697914395": {
         "type": "shopify://apps/reviews-io/blocks/reviewsio-floating/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "widget_id": "",
           "show_all": true,
@@ -67,22 +83,6 @@
           "show_product": true,
           "show_collection": true,
           "show_cart": true
-        }
-      },
-      "10830403595879607806": {
-        "type": "shopify://apps/reviews-io/blocks/reviewsio-core/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": false,
-        "settings": {
-          "url_key": "zulay-reviews-io",
-          "lang": "auto",
-          "enable_syndication": false
-        }
-      },
-      "13951170544780599758": {
-        "type": "shopify://apps/tapita-seo-speed/blocks/app-embed/cd37ca7a-40ad-4fdc-afd3-768701482209",
-        "disabled": true,
-        "settings": {
-          "hide_price": false
         }
       }
     },
