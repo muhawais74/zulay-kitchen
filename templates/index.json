@@ -92,6 +92,46 @@
         "border_color": ""
       }
     },
+    "modern_faq_TLWYwK": {
+      "type": "modern-faq",
+      "blocks": {
+        "accordion_zG9DnR": {
+          "type": "accordion",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_d833fc2c-a27f-4a08-bd3d-6bcb0c52ac15.jpg",
+            "question": "Question FAQ",
+            "answer": "<p>Answer FAQ</p>"
+          }
+        },
+        "accordion_kPwVAr": {
+          "type": "accordion",
+          "settings": {
+            "image": "shopify://shop_images/5_4aaa01ec-dd6b-41ae-aa91-c50f5b43cd46.jpg",
+            "question": "Question FAQ",
+            "answer": "<p>Answer FAQ</p>"
+          }
+        },
+        "accordion_trrhYe": {
+          "type": "accordion",
+          "settings": {
+            "image": "shopify://shop_images/13_8812f1c4-2287-45eb-a3bd-5cfce03bdadc.jpg",
+            "question": "QUESTion FAQ",
+            "answer": "<p>Answer FAQ</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_zG9DnR",
+        "accordion_kPwVAr",
+        "accordion_trrhYe"
+      ],
+      "name": "Modern FAQ",
+      "settings": {
+        "color_scheme": "",
+        "title": "This is heading",
+        "description": ""
+      }
+    },
     "rich_text_RiG3ja": {
       "type": "rich-text",
       "blocks": {
@@ -557,6 +597,7 @@
   "order": [
     "slideshow",
     "hero_banner_xGEbTU",
+    "modern_faq_TLWYwK",
     "rich_text_RiG3ja",
     "collection-list",
     "featured_product_6hNNQq",
