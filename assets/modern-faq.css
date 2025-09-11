@@ -1,0 +1,92 @@
+.modern__faq .accordion__wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    align-items: center;
+}
+
+.modern__faq .title__desc-wrapper {
+    text-align: center;
+}
+
+.modern__faq .accordion__content {
+    flex: 1;
+}
+
+.modern__faq.container.container--md {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.modern__faq .accordion__wrapper .image {
+    flex: 35%;
+}
+.modern__faq .accordion__wrapper .image img {
+    width: 100%;
+}
+.modern__faq .accordion__wrapper .accordion__content {
+    flex: 60%;
+    width: 100%;
+}
+.title__desc-wrapper .title.h2 {
+    font-size: 2.4rem;
+}
+.modern__faq .container {
+    width: 100%;
+    max-width: 840px
+}
+.modern__faq .accordion {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /* background: #fff; */
+}
+.modern__faq .accordion-icon .icon {
+    width: 18px;
+}
+.modern__faq .accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+.modern__faq .accordion-header {
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: #f1f1f1; */
+}
+.modern__faq .accordion-header:hover {
+    /* background: #e9ecef; */
+}
+.modern__faq .accordion-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+.modern__faq .accordion-icon {
+    transition: transform 0.3s;
+}
+.modern__faq .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 15px;
+    /* background: #fff; */
+}
+.modern__faq .accordion-content p {
+    margin: 15px 0;
+}
+.modern__faq .accordion-item.active .accordion-content {
+    max-height: 200px;
+}
+.modern__faq .accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+@media screen and (max-width: 767px) {
+    .modern__faq .accordion__wrapper {
+        flex-direction: column;
+    }
+    .title__desc-wrapper .title.h2 {
+        font-size: 1.4rem;
+    }
+}

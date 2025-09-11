@@ -1,0 +1,109 @@
+{{ 'modern-faq.css' | asset_url | stylesheet_tag }}
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+<div class="section-spacing section-spacing--tight color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+    <div class="modern__faq container container--md">
+        <div class="title__desc-wrapper">
+            <h2 class="title h2">
+                {{ section.settings.title }}
+            </h2>
+            <p class="description">
+                {{ section.settings.description }}
+            </p>
+        </div>
+        {% if section.blocks.size > 0 %}
+            <div class="accordion__wrapper" js-accordion-image-wrapper>
+                {% for block in section.blocks %}
+                    {% if block.settings.image != blank %}
+                        <div class="image">
+                            {{ block.settings.image | image_url: width: 300 | image_tag: class: 'accordion__image' , data-index: forloop.index  }}
+                        </div>
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+                <div class="accordion__content">
+                    {% for block in section.blocks %}
+                        {% render 'modern-accordion', title: block.settings.question, content: block.settings.answer, index: forloop.index , image_input: block.settings.image %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+<script>
+    const items = document.querySelectorAll('.accordion-item');
+
+
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+
+            // Close all items first
+            items.forEach(i => {
+                if (i !== item) {
+                    i.classList.remove('active');
+                }
+            });
+
+            // Toggle the clicked one
+            item.classList.toggle('active');
+            const container = item.closest('[js-accordion-image-wrapper]');
+            const accordionContainer = item.closest('.accordion-item');
+            console.log({container}, {accordionContainer});
+            container.querySelector('.image img').src= accordionContainer.dataset.imageSrc
+            container.querySelector('.image img').srcset= accordionContainer.dataset.imageSrc
+
+        });
+    });
+</script>
+{% schema %}
+{
+    "name": "Modern FAQ",
+    "settings": [  
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "t:global.colors.scheme",
+            "default": "scheme-1"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "accordion",
+            "name": "Accordion",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "richtext",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Modern FAQ"
+        }
+    ]
+}
+{% endschema %}
