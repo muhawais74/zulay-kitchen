@@ -1,0 +1,79 @@
+{% style %}
+    .sitemap.container .menu {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1rem;
+        list-style: none;
+    }
+    .sitemap.container .parent__link {
+        font-weight: 600;
+    }
+    .sitemap.container .menu.dropdown-child .menu-link {
+        text-decoration: underline;
+    }
+{% endstyle %}
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+<div class="section-spacing section-spacing--tight color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }}">
+    <div class="sitemap container container--md">
+        <ul class="menu">
+            {% for link in linklists.sitemap.links %}
+                <li class="menu-link">
+                    <a class="parent__link" href="{{ link.url }}">{{ link.title }}</a>
+                    {% unless link.title contains 'Products' %}
+                        {% if link.links.size > 0 %}
+                            <ul class="menu dropdown-child">
+                            {% for child_link in link.links %}
+                                <li class="menu-link">
+                                <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                                {% if child_link.links.size > 0 %}
+                                    <ul class="menu dropdown-grandchild">
+                                    {% for grandchild_link in child_link.links %}
+                                        <li class="menu-link">
+                                        <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                                {% endif %}
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% else %}
+                        {% if link.links.size > 0 %}
+                            {% for child_collection in link.links %}
+                                {% assign collection_handle = child_collection.handle %}
+                                {% assign collection = collections[collection_handle] %}
+                                <ul class="menu dropdown-child">
+                                    {% for product in collection.products %}
+                                        <li class="menu-link">
+                                            <a href="{{ product.url }}">{{ product.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endfor %}
+                        {% endif %}
+                    {% endunless %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Sitemap",
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "t:global.colors.scheme",
+            "default": "scheme-1"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Sitemap"
+        }
+    ]
+}
+{% endschema %}
