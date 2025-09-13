@@ -49,4 +49,11 @@ Supported variables
       {%- render 'icon' with 'email' -%}
     </a>
   </li>
+  <li class="social-media__item branding-colors--reddit">
+    {%- capture share_url -%}https://reddit.com/submit?url={{ url }}{% if page_image != blank %}&media={{ page_image | image_url: width: 800 | prepend: 'https:' }}{% endif %}&description={{ description | strip_html | truncate: 200 | url_param_escape }}
+    {% endcapture %}
+    <a href="{{ share_url }}" onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" title="Share on Reddit" rel="noopener" aria-label="{{ 'general.social.share_on' | t: social_media: 'Reddit' }}">
+      {%- render 'icon' with 'reddit' -%}
+    </a>
+  </li>
 </ul>
