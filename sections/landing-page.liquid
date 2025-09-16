@@ -1,0 +1,73 @@
+{{ 'landing-page.css' | asset_url | stylesheet_tag }}
+
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+<div class="section-spacing section-spacing--tight color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+    <div class="landing-page--container container container--md">
+        <div class="landing__title">
+            <h1 class="h1 title">
+                {{ page.title }}
+            </h1>
+        </div>
+        <div class="landing__banner">
+            {% if page.metafields.custom.landing_page_media != blank %}
+                {{ page.metafields.custom.landing_page_media | image_url: width: 1200, height: 650 | image_tag: class: 'landing__page-banner--image' }}
+            {% endif %}
+        </div>
+        <div class="landing__description">
+            {{ page.content }}
+        </div>
+        <div class="selected__products-list">
+            {% if page.metafields.custom.products_list != blank %}
+                <div class="landing__product-card">
+                    {% for product in page.metafields.custom.products_list.value %}
+                        {% assign form_id = 'product-form-main-{{ section.id }}-{{ forloop.index }}' %}
+                        <product-form>
+                            <form method="post" action="/cart/add" id="{{ form_id }}" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data">
+                                <div class="landing__card">
+                                    <div class="image">
+                                        {{ product.featured_image | image_url: width: 400 | image_tag: class: 'landing__image' }}
+                                    </div>
+                                    <div class="price__title-wrapper">
+                                        <a href="{{  product.url }}">
+                                        <div class="price">
+                                            {{ product.price | money }}
+                                        </div>
+                                        <div class="title">
+                                            {{  product.title }}
+                                        </div>
+                                        </a>
+                                    </div>
+                                    {% render 'buy-buttons' , product: product, show_payment_button: false, form_id: form_id %}
+                                </div>
+                            </form>
+                        </product-form>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        {% if page.metafields.custom.mini_article != blank %}
+            <div class="landing__mini-article">
+                {{ page.metafields.custom.mini_article | metafield_tag }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Landing Page",
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "t:global.colors.scheme",
+            "default": "scheme-1"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Landing Page"
+        }
+    ]
+}
+{% endschema %}

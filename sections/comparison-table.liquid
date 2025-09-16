@@ -1,0 +1,320 @@
+{{ 'comparison-table.css' | asset_url | stylesheet_tag }}
+
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+<div class="section-spacing section-spacing--tight color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+    <div class="landing-page--container container container--md">
+        {% if section.settings.title != blank %}
+            <h1 class="h1">{{ section.settings.title }}</h1>
+        {% endif %}
+        <div class="clarity__table page-width">
+            <table>
+                <caption>
+                    <div class="table__text-content">
+                        <h1 class="h1 table__title">{{ section.settings.heading_table }}</h1>
+                        <p class="p table__description">{{ section.settings.para_table }}</p>
+                    </div>
+                </caption>
+                <thead>
+                <tr>
+                    {% for block in section.blocks %}
+                        <th scope="col">{{ block.settings.table_heading }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for block in section.blocks %}
+                    <tr>
+                    {% for i in (1..7) %}
+                        {% capture icon_key %}cell_{{ i }}_checkbox{% endcapture %}
+                        {% capture text_key %}table_data_{{ i }}{% endcapture %}
+
+                        {% assign icon = block.settings[icon_key] %}
+                        {% assign text = block.settings[text_key] %}
+
+                        {% if icon != blank %}
+                        <td data-label="{{ block.settings.table_heading }}">
+                            {% if icon == 'checked-circle' %}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                class="clarity-icon clarity-icon-checked-circle"
+                            >
+                                <circle cx="10" cy="10" r="9.375" stroke="green" stroke-width="1.25" style="color: green;"/>
+                                <path d="M5.55469 9.99995L8.88802 13.3333L14.9991 7.22217" stroke="green" stroke-width="2" />
+                            </svg>
+                            {% elsif icon == 'checked' %}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                class="clarity-icon clarity-icon-checked"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke=""
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            {% elsif icon == 'unchecked' %}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                class="clarity-icon clarity-icon-unchecked"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="red"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            {% endif %}
+                        </td>
+                        {% elsif text != blank %}
+                        <td data-label="{{ block.settings.table_heading }}">
+                            {{ text }}
+                        </td>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="clarity__caption-table">
+                <p>{{ section.settings.caption_table }}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Clarity Table",
+  "settings": [
+    {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:global.colors.scheme",
+        "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "heading_table",
+      "label": "heading table"
+    },
+    {
+      "type": "richtext",
+      "id": "para_table",
+      "label": "paragraph table"
+    },
+    {
+      "type": "richtext",
+      "id": "caption_table",
+      "label": "caption table"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "table_heading",
+          "label": "Table Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "icon_field_1",
+          "label": "Use Icon for Data 1?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "cell_1_checkbox",
+          "label": "Cell 1 Icon",
+          "options": [
+            { "value": "", "label": "None" },
+            { "value": "checked-circle", "label": "Checked circle" },
+            { "value": "checked", "label": "Checked" },
+            { "value": "unchecked", "label": "Unchecked" }
+          ],
+          "default": "",
+          "visible_if": "{{ block.settings.icon_field_1 == true }}"
+        },
+        {
+          "type": "text",
+          "id": "table_data_1",
+          "label": "Table Data 1",
+          "visible_if": "{{ block.settings.icon_field_1 == false }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "icon_field_2",
+          "label": "Use Icon for Data 2?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "cell_2_checkbox",
+          "label": "Cell 2 Icon",
+          "options": [
+            { "value": "", "label": "None" },
+            { "value": "checked-circle", "label": "Checked circle" },
+            { "value": "checked", "label": "Checked" },
+            { "value": "unchecked", "label": "Unchecked" }
+          ],
+          "default": "",
+          "visible_if": "{{ block.settings.icon_field_2 == true }}"
+        },
+        {
+          "type": "text",
+          "id": "table_data_2",
+          "label": "Table Data 2",
+          "visible_if": "{{ block.settings.icon_field_2 == false }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "icon_field_3",
+          "label": "Use Icon for Data 3?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "cell_3_checkbox",
+          "label": "Cell 3 Icon",
+          "options": [
+            { "value": "", "label": "None" },
+            { "value": "checked-circle", "label": "Checked circle" },
+            { "value": "checked", "label": "Checked" },
+            { "value": "unchecked", "label": "Unchecked" }
+          ],
+          "default": "",
+          "visible_if": "{{ block.settings.icon_field_3 == true }}"
+        },
+        {
+          "type": "text",
+          "id": "table_data_3",
+          "label": "Table Data 3",
+          "visible_if": "{{ block.settings.icon_field_3 == false }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "icon_field_4",
+          "label": "Use Icon for Data 4?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "cell_4_checkbox",
+          "label": "Cell 4 Icon",
+          "options": [
+            { "value": "", "label": "None" },
+            { "value": "checked-circle", "label": "Checked circle" },
+            { "value": "checked", "label": "Checked" },
+            { "value": "unchecked", "label": "Unchecked" }
+          ],
+          "default": "",
+          "visible_if": "{{ block.settings.icon_field_4 == true }}"
+        },
+        {
+          "type": "text",
+          "id": "table_data_4",
+          "label": "Table Data 4",
+          "visible_if": "{{ block.settings.icon_field_4 == false }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "icon_field_5",
+          "label": "Use Icon for Data 5?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "cell_5_checkbox",
+          "label": "Cell 5 Icon",
+          "options": [
+            { "value": "", "label": "None" },
+            { "value": "checked-circle", "label": "Checked circle" },
+            { "value": "checked", "label": "Checked" },
+            { "value": "unchecked", "label": "Unchecked" }
+          ],
+          "default": "",
+          "visible_if": "{{ block.settings.icon_field_5 == true }}"
+        },
+        {
+          "type": "text",
+          "id": "table_data_5",
+          "label": "Table Data 5",
+          "visible_if": "{{ block.settings.icon_field_5 == false }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "icon_field_6",
+          "label": "Use Icon for Data 6?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "cell_6_checkbox",
+          "label": "Cell 6 Icon",
+          "options": [
+            { "value": "", "label": "None" },
+            { "value": "checked-circle", "label": "Checked circle" },
+            { "value": "checked", "label": "Checked" },
+            { "value": "unchecked", "label": "Unchecked" }
+          ],
+          "default": "",
+          "visible_if": "{{ block.settings.icon_field_6 == true }}"
+        },
+        {
+          "type": "text",
+          "id": "table_data_6",
+          "label": "Table Data 6",
+          "visible_if": "{{ block.settings.icon_field_6 == false }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "icon_field_7",
+          "label": "Use Icon for Data 7?",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "cell_7_checkbox",
+          "label": "Cell 7 Icon",
+          "options": [
+            { "value": "", "label": "None" },
+            { "value": "checked-circle", "label": "Checked circle" },
+            { "value": "checked", "label": "Checked" },
+            { "value": "unchecked", "label": "Unchecked" }
+          ],
+          "default": "",
+          "visible_if": "{{ block.settings.icon_field_7 == true }}"
+        },
+        {
+          "type": "text",
+          "id": "table_data_7",
+          "label": "Table Data 7",
+          "visible_if": "{{ block.settings.icon_field_7 == false }}"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clarity Table"
+    }
+  ]
+}
+{% endschema %}

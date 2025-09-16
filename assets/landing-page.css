@@ -1,0 +1,32 @@
+.landing__product-card {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: scroll;
+    align-items: self-end;
+    scrollbar-width: thin;
+    padding: 15px 0;
+}
+.landing__product-card product-form {
+    max-width: 300px;
+    min-width: 230px;
+}
+.landing__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+.price__title-wrapper {
+    min-height: 79px;
+}
+.landing__title {
+    text-align: center;
+    padding: 15px 0;
+}
+.landing__banner {
+    padding: 20px 0;
+}
+.landing__description {
+    padding: 20px 0;
+}
