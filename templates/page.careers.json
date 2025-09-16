@@ -1,1 +1,378 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"color_scheme":"","show_title":true,"page_width":"xs"}},"rich_text_qQ7nAL":{"type":"rich-text","blocks":{"subheading_kLPU8G":{"type":"subheading","settings":{"text":"<strong>Build your future with us.<\/strong>"}},"heading_YPNKAj":{"type":"heading","settings":{"text":"<strong>Join Our Team<\/strong>","heading_tag":"h1"}}},"block_order":["subheading_kLPU8G","heading_YPNKAj"],"name":"t:sections.rich_text.presets.rich_text.name","settings":{"color_scheme":"","separate_section_with_border":true,"content_width":"sm","text_position":"center","remove_vertical_spacing":false}},"video_eKC8Ld":{"type":"video","blocks":{"play_KL6fRG":{"type":"play","settings":{"icon_color":"#ffffff"}},"heading_GdhiLt":{"type":"heading","settings":{"text":"","heading_tag":"h2"}}},"block_order":["play_KL6fRG","heading_GdhiLt"],"name":"t:sections.video.presets.video.name","settings":{"autoplay":true,"show_controls":true,"video_size":"auto","external_video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","poster":"shopify:\/\/shop_images\/Screenshot_2025-06-27_at_2.30.52_PM.png","text_color":"#ffffff"}},"rich_text_X6YjtL":{"type":"rich-text","blocks":{"richtext_xpMMe4":{"type":"richtext","settings":{"content":"<p>At Zulay Kitchen, we believe our people are our greatest asset. We’re on a mission to create innovative solutions and deliver exceptional value to our customers.<br\/><br\/>We know that starts with a passionate, driven team. Whether you're just starting out or looking to take the next step in your career, you'll find opportunities to grow, collaborate, and make a real impact here.<\/p>"}},"button_LrinRr":{"type":"button","settings":{"style":"solid","text":"Send Us a message","url":"mailto:careers@zulay.net","background":"","text_color":""}}},"block_order":["richtext_xpMMe4","button_LrinRr"],"name":"t:sections.rich_text.presets.rich_text.name","settings":{"color_scheme":"","separate_section_with_border":true,"content_width":"sm","text_position":"center","remove_vertical_spacing":false}},"rich_text_YdcmeL":{"type":"rich-text","blocks":{"subheading_x74GCn":{"type":"subheading","settings":{"text":"<strong>Build your future with us.<\/strong>"}},"heading_CkkX3f":{"type":"heading","settings":{"text":"<strong>Meet the team<\/strong>","heading_tag":"h1"}}},"block_order":["subheading_x74GCn","heading_CkkX3f"],"name":"t:sections.rich_text.presets.rich_text.name","settings":{"color_scheme":"","separate_section_with_border":true,"content_width":"sm","text_position":"center","remove_vertical_spacing":false}},"multi_column_Xjrwe6":{"type":"multi-column","blocks":{"image_with_text_nJzwYp":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Aaron.jpg","title":"<strong>CEO & Founder<\/strong>","heading_tag":"h5","content":"<p>Aaron Cordoves<\/p>","link_url":"","link_text":""}},"image_with_text_CkdUU4":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Whitney.jpg","title":"<strong>Founder<\/strong>","heading_tag":"h5","content":"<p>Whitney Cordoves<\/p>","link_url":"","link_text":""}},"image_with_text_3eLKAk":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Gabe.jpg","title":"<strong>Coo<\/strong>","heading_tag":"h5","content":"<p>Gabe<\/p>","link_url":"","link_text":""}},"image_with_text_gJgXPw":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Jeremy.jpg","title":"<strong>Senior Catagory Manager<\/strong>","heading_tag":"h6","content":"<p>Jeremy<\/p>","link_url":"","link_text":""}},"image_with_text_U7DaKK":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Tom.jpg","title":"<strong>Catagory Manager<\/strong>","heading_tag":"h6","content":"<p>Tom<\/p>","link_url":"","link_text":""}},"image_with_text_BYJRVT":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/MAREN.jpg","title":"<strong>VP Finance<\/strong>","heading_tag":"h5","content":"<p>Maren<\/p>","link_url":"","link_text":""}},"image_with_text_qXbabC":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Peter_and_Bailey.jpg","title":"<strong>Quality Control<\/strong>","heading_tag":"h5","content":"<p>Bailey & Peter<\/p>","link_url":"","link_text":""}},"image_with_text_hagQUj":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/DAvid.jpg","title":"<strong>Freight Manager<\/strong>","heading_tag":"h5","content":"<p>David <\/p>","link_url":"","link_text":""}},"image_with_text_NgcMYL":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Marcello.jpg","title":"<strong>Director of Wholesale<\/strong>","heading_tag":"h5","content":"<p>Marcelo<\/p>","link_url":"","link_text":""}},"image_with_text_R8gxTC":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Michael.jpg","title":"<strong>HR Manager<\/strong>","heading_tag":"h5","content":"<p>Michael<\/p>","link_url":"","link_text":""}}},"block_order":["image_with_text_nJzwYp","image_with_text_CkdUU4","image_with_text_3eLKAk","image_with_text_gJgXPw","image_with_text_U7DaKK","image_with_text_BYJRVT","image_with_text_qXbabC","image_with_text_hagQUj","image_with_text_NgcMYL","image_with_text_R8gxTC"],"name":"t:sections.multi_column.presets.multi_column.name","settings":{"color_scheme":"","separate_section_with_border":true,"columns_per_row":5,"stack_on_mobile":false,"overlap_image":false,"content_alignment":"start","text_alignment":"start","spacing":"md","subheading":"","title":"","content":""}},"rich_text_KLbH6T":{"type":"rich-text","blocks":{"button_LNdazm":{"type":"button","settings":{"style":"solid","text":"Join the team","url":"mailto:careers@zulay.net","background":"","text_color":""}}},"block_order":["button_LNdazm"],"name":"t:sections.rich_text.presets.rich_text.name","settings":{"color_scheme":"","separate_section_with_border":true,"content_width":"sm","text_position":"center","remove_vertical_spacing":false}}},"order":["main","rich_text_qQ7nAL","video_eKC8Ld","rich_text_X6YjtL","rich_text_YdcmeL","multi_column_Xjrwe6","rich_text_KLbH6T"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "rich_text_qQ7nAL": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_kLPU8G": {
+          "type": "subheading",
+          "settings": {
+            "text": "<strong>Build your future with us</strong>"
+          }
+        },
+        "heading_YPNKAj": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Join Our Team</strong>",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_kLPU8G",
+        "heading_YPNKAj"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "multi_column_fqCwfA": {
+      "type": "multi-column",
+      "blocks": {
+        "image_with_text_Fqjh6y": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Social Media Video Editor",
+            "heading_tag": "h3",
+            "content": "<p>Bring stories to life through engaging, viral worthy videos across TikTok, Instagram, YouTube, and more. If you’re a creative editor who knows how to capture attention online, this role is for you.</p>",
+            "link_url": "https://www.notion.so/Social-Media-Video-Editor-26ff2066906a80a581efeacaebd93764",
+            "link_text": "CLICK HERE TO APPLY"
+          }
+        },
+        "image_with_text_UcrBXA": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Amazon Advertising Specialist",
+            "heading_tag": "h3",
+            "content": "<p>Drive growth by managing and optimizing Amazon ad campaigns that get our products seen and sold. If you’re data-driven and passionate about scaling performance, this role is for you.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_fM8fyD": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Recruiter",
+            "heading_tag": "h3",
+            "content": "<p>Help us find and attract top talent to grow our team. If you’re passionate about connecting people with opportunities and building strong teams, we’d love to hear from you.</p>",
+            "link_url": "https://www.notion.so/ZULAY-KITCHEN-COMPANY-CULTURE-262f2066906a80a5a4b5fa39d2c3fd9b",
+            "link_text": "CLICK HERE TO APPLY"
+          }
+        },
+        "image_with_text_Gkn6pd": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Photographer",
+            "heading_tag": "h3",
+            "content": "<p>Capture high-quality images that showcase our products and brand story. If you’ve got an eye for detail and love creating visuals that stand out, this role is for you.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_Apf7VW": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Product Manager",
+            "heading_tag": "h3",
+            "content": "<p>Lead the way in discovering, developing, and launching innovative kitchen gadgets. If you’re driven by product ideas and love turning concepts into bestsellers, this is the role for you. </p>",
+            "link_url": "https://www.notion.so/ZULAY-KITCHEN-COMPANY-CULTURE-262f2066906a80a5a4b5fa39d2c3fd9b",
+            "link_text": "CLICK HERE TO APPLY"
+          }
+        },
+        "image_with_text_n8PpK7": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Product Sourcing Specialist",
+            "heading_tag": "h3",
+            "content": "<p>Discover and secure the best products by working directly with suppliers and manufacturers. If you’re detail-oriented, resourceful, and passionate about finding winning products, we want you on our team.</p>",
+            "link_url": "https://www.notion.so/ZULAY-KITCHEN-COMPANY-CULTURE-262f2066906a80a5a4b5fa39d2c3fd9b",
+            "link_text": "CLICK HERE TO APPLY"
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_Fqjh6y",
+        "image_with_text_UcrBXA",
+        "image_with_text_fM8fyD",
+        "image_with_text_Gkn6pd",
+        "image_with_text_Apf7VW",
+        "image_with_text_n8PpK7"
+      ],
+      "name": "t:sections.multi_column.presets.multi_column.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "columns_per_row": 3,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "md",
+        "subheading": "",
+        "title": "<strong>OPEN POSITIONS</strong>",
+        "content": ""
+      }
+    },
+    "rich_text_X6YjtL": {
+      "type": "rich-text",
+      "blocks": {
+        "richtext_xpMMe4": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>At Zulay Kitchen, we believe our people are our greatest asset. We’re on a mission to create innovative solutions and deliver exceptional value to our customers.<br/><br/>We know that starts with a passionate, driven team. Whether you're just starting out or looking to take the next step in your career, you'll find opportunities to grow, collaborate, and make a real impact here.</p>"
+          }
+        },
+        "button_LrinRr": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Send Us a message",
+            "url": "mailto:careers@zulay.net",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "richtext_xpMMe4",
+        "button_LrinRr"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "rich_text_YdcmeL": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_x74GCn": {
+          "type": "subheading",
+          "settings": {
+            "text": "<strong>Build your future with us</strong>"
+          }
+        },
+        "heading_CkkX3f": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Meet the team</strong>",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_x74GCn",
+        "heading_CkkX3f"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "multi_column_Xjrwe6": {
+      "type": "multi-column",
+      "blocks": {
+        "image_with_text_nJzwYp": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Aaron.jpg",
+            "title": "<strong>CEO & Founder</strong>",
+            "heading_tag": "h5",
+            "content": "<p>Aaron Cordoves</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_CkdUU4": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Whitney.jpg",
+            "title": "<strong>Founder</strong>",
+            "heading_tag": "h5",
+            "content": "<p>Whitney Cordoves</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_3eLKAk": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Gabe.jpg",
+            "title": "<strong>Coo</strong>",
+            "heading_tag": "h5",
+            "content": "<p>Gabe</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_gJgXPw": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Jeremy.jpg",
+            "title": "<strong>Senior Catagory Manager</strong>",
+            "heading_tag": "h6",
+            "content": "<p>Jeremy</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_U7DaKK": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Tom.jpg",
+            "title": "<strong>Catagory Manager</strong>",
+            "heading_tag": "h6",
+            "content": "<p>Tom</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_BYJRVT": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/MAREN.jpg",
+            "title": "<strong>VP Finance</strong>",
+            "heading_tag": "h5",
+            "content": "<p>Maren</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_qXbabC": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Peter_and_Bailey.jpg",
+            "title": "<strong>Quality Control</strong>",
+            "heading_tag": "h5",
+            "content": "<p>Bailey & Peter</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_hagQUj": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/DAvid.jpg",
+            "title": "<strong>Freight Manager</strong>",
+            "heading_tag": "h5",
+            "content": "<p>David </p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_NgcMYL": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Marcello.jpg",
+            "title": "<strong>Director of Wholesale</strong>",
+            "heading_tag": "h5",
+            "content": "<p>Marcelo</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_R8gxTC": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Michael.jpg",
+            "title": "<strong>HR Manager</strong>",
+            "heading_tag": "h5",
+            "content": "<p>Michael</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_nJzwYp",
+        "image_with_text_CkdUU4",
+        "image_with_text_3eLKAk",
+        "image_with_text_gJgXPw",
+        "image_with_text_U7DaKK",
+        "image_with_text_BYJRVT",
+        "image_with_text_qXbabC",
+        "image_with_text_hagQUj",
+        "image_with_text_NgcMYL",
+        "image_with_text_R8gxTC"
+      ],
+      "name": "t:sections.multi_column.presets.multi_column.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "columns_per_row": 5,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing": "md",
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "rich_text_KLbH6T": {
+      "type": "rich-text",
+      "blocks": {
+        "button_LNdazm": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Join the team",
+            "url": "mailto:careers@zulay.net",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_LNdazm"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_qQ7nAL",
+    "multi_column_fqCwfA",
+    "rich_text_X6YjtL",
+    "rich_text_YdcmeL",
+    "multi_column_Xjrwe6",
+    "rich_text_KLbH6T"
+  ]
+}
