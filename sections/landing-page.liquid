@@ -32,12 +32,12 @@
                                     </div>
                                     <div class="price__title-wrapper">
                                         <a href="{{  product.url }}">
-                                        <div class="price">
-                                            {{ product.price | money }}
-                                        </div>
-                                        <div class="title">
-                                            {{  product.title }}
-                                        </div>
+                                            <div class="price">
+                                                {{ product.price | money }}
+                                            </div>
+                                            <div class="title">
+                                                {{  product.title }}
+                                            </div>
                                         </a>
                                     </div>
                                     {% render 'buy-buttons' , product: product, show_payment_button: false, form_id: form_id %}
@@ -69,11 +69,6 @@
             "id": "color_scheme",
             "label": "t:global.colors.scheme",
             "default": "scheme-1"
-        }
-    ],
-    "presets": [
-        {
-            "name": "Landing Page"
         }
     ]
 }
