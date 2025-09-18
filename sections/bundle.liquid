@@ -41,8 +41,8 @@
         <div class="maximise__window">
         </div>
         <span class="summary__title h3" js-bundle-summary-head>Bundle Summary</span>
-        <product-form>
-            <form method="post" action="{{ routes.cart_add_url }}" id="product-form-bundle-{{ section.id }}" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data">
+        {% comment %} <product-form>
+            <form method="post" action="{{ routes.cart_add_url }}" id="product-form-bundle-{{ section.id }}" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data"> {% endcomment %}
                 <div class="bundle__summary-box">
                     <span class="summary__title--inner h6">Selected Products</span>
                     <div class="items__summary-bundle">
@@ -64,15 +64,15 @@
                             </div>
                         </div>
                     </div>
-                    <buy-button class="buy-buttons " form="product-form-bundle-{{ section.id }}">
+                    <buy-button class="buy-buttons " form="product-form-bundle-{{ section.id }}" js-add-bundle-to-cart>
                         <div class="bundle__cart-add">
                             <button type="submit">Add Bundle To Cart - <span js-bundle-total-price>{{ 0 | money }}</span></button>
                         </div>
                     </buy-button>
                 </div>
                 <input type="hidden" name="section-id" value="{{ section.id }}">
-            </form>
-        </product-form>
+            {% comment %} </form>
+        </product-form> {% endcomment %}
     </div>
 </div>
 <script src="{{ 'bundle.js' | asset_url }}" defer></script>

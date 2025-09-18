@@ -30,14 +30,12 @@ Supported variables
         {%- capture vendor_class -%}smallcaps {% if settings.product_card_text_font == 'heading' %}heading{% endif %}{% endcapture %}
         {%- render 'vendor' with line_item.vendor, class: vendor_class -%}
       {%- endif -%}
-
       <div class="v-stack justify-items-start gap-1">
         {%- if line_item.url != blank -%}
           <a href="{{ line_item.url }}" class="{{ text_class }}">{{ line_item.product.title | default: line_item.title }}</a>
         {%- else -%}
           <p class="{{ text_class }}">{{ line_item.product.title | default: line_item.title }}</p>
         {%- endif -%}
-
         {%- render 'price-list', line_item: line_item, context: 'line_item' -%}
       </div>
 
@@ -76,8 +74,7 @@ Supported variables
           {{- secondary_information -}}
         </div>
       {%- endif -%}
-
-      {%- if show_quantity_selector -%}
+      {%- if show_quantity_selector == true -%}
         <line-item-quantity class="h-stack gap-4 {% if request.page_type == 'cart' %}sm:hidden{% endif %}">
           {%- render 'quantity-selector', line_item: line_item, size: 'sm' -%}
           
