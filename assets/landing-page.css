@@ -1,3 +1,8 @@
+.landing-page--container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 .landing__product-card {
     display: flex;
     flex-wrap: nowrap;
