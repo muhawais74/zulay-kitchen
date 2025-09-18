@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,11 +14,70 @@
       "settings": {
         "color_scheme": "",
         "show_title": true,
-        "page_width": "xs"
+        "page_width": "md"
+      }
+    },
+    "landing_page_QrFMqR": {
+      "type": "landing-page",
+      "name": "Landing Page",
+      "settings": {
+        "title": "Milk Frother Landing Page",
+        "color_scheme": ""
+      }
+    },
+    "modern_faq_NTG6dx": {
+      "type": "modern-faq",
+      "blocks": {
+        "accordion_JnjAXq": {
+          "type": "accordion",
+          "settings": {
+            "image": "shopify://shop_images/One-Touch-Milk-Frother-Zulay-Kitchen-34939828535534_7be22a0a-7f79-4fcc-87c3-1088b65abbda.jpg",
+            "question": "What can I use a milk frother for?",
+            "answer": "<p>You can froth milk for lattes, cappuccinos, macchiatos, hot chocolate, or even mix protein shakes and matcha.</p>"
+          }
+        },
+        "accordion_yXe7zm": {
+          "type": "accordion",
+          "settings": {
+            "image": "shopify://shop_images/Royal_Blue_Froth_n_Go.jpg",
+            "question": "Can I use non-dairy milk in a frother?",
+            "answer": "<p>Yes! Almond, soy, oat, and coconut milk can all be frothed, though the texture may vary depending on the brand and fat content.</p>"
+          }
+        },
+        "accordion_GFKpFz": {
+          "type": "accordion",
+          "settings": {
+            "image": "shopify://shop_images/2_ed39589f-c63d-4736-893e-f7e340fe8066.jpg",
+            "question": "Does the milk need to be hot before frothing?",
+            "answer": "<p>It depends on the frother. Handheld frothers work with both hot and cold milk. Electric frothers usually have heating and frothing functions combined.</p>"
+          }
+        },
+        "accordion_FVPmLJ": {
+          "type": "accordion",
+          "settings": {
+            "image": "shopify://shop_images/Dragonfruit_Froth_n_Go.jpg",
+            "question": "How long does it take to froth milk?",
+            "answer": "<p>Handheld frothers typically take 15–30 seconds. Electric frothers may take 1–2 minutes but also heat the milk.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_JnjAXq",
+        "accordion_yXe7zm",
+        "accordion_GFKpFz",
+        "accordion_FVPmLJ"
+      ],
+      "name": "Modern FAQ",
+      "settings": {
+        "color_scheme": "",
+        "title": "Frequently Asked Questions",
+        "description": ""
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "landing_page_QrFMqR",
+    "modern_faq_NTG6dx"
   ]
 }

@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         // replace state array with order matching DOM
         window.__bundleState = newState;
-        document.querySelector('.build__your-bundle [js-bundle-total-price]').textContent=window.__currenctSymbol + bundleSum;
+        document.querySelector('.build__your-bundle [js-bundle-total-price]').textContent=window.__currenctSymbol + bundleSum.toFixed(2);
     }
 
     function updateProductCardUIForVariant(card) {
@@ -306,6 +306,66 @@ document.addEventListener('DOMContentLoaded', function() {
             updateProductCardUIForVariant(card);
         });
     }
+
+    document.addEventListener('click', async function (e) {
+        const wrapper = e.target.closest('[js-add-bundle-to-cart]');
+        if (!wrapper) return;
+        e.preventDefault();
+
+        // prefer a real <button> inside the wrapper, otherwise use wrapper itself
+        const btn = wrapper.querySelector('button') || wrapper;
+        if (!btn) return;
+
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.style.opacity = 0.3;
+        btn.style.opacity='0.3';
+
+        try {
+            // collect all id inputs inside summary (the hidden inputs like items[0][id])
+            const inputs = Array.from(document.querySelectorAll('.items__summary-bundle input[name*="[id]"]'));
+            if (inputs.length === 0) throw new Error('No bundle items found');
+
+            // take the first input as parent variant
+            const parentVariantId = 46988164235502;
+            // random static number for parent_id (generated per click)
+            const parentId = 46988164235502;
+
+            const selected = inputs;
+            // place the synthetic parentId item first, then append the real parent variant and selected children
+            const items = [
+                { id: Number(parentVariantId), quantity: 1 },
+                ...selected.map(input => ({ id: Number(input.value), quantity: 1, parent_id: parentVariantId }))
+            ];
+            const res = await fetch('/cart/add.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ items }),
+                credentials: 'same-origin'
+            });
+
+            if (!res.ok) {
+                const text = await res.text().catch(()=>'');
+                throw new Error('Add to cart failed: ' + (text || res.status));
+            } else {
+                document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+                setTimeout(()=>{
+                    document.querySelector('.header__cart-link a[aria-controls="cart-drawer"]')?.click();
+                    window.bundleReset();
+                    btn.style.opacity='1';
+                },10)
+            }
+
+
+        } catch (err) {
+            console.error('Bundle add to cart error', err);
+            btn.textContent = 'Error';
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }, 2000);
+        }
+    });
 
     // Delegated click handler for Add to Bundle
     document.addEventListener('click', function (e) {

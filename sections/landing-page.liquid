@@ -5,9 +5,11 @@
 <div class="section-spacing section-spacing--tight color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
     <div class="landing-page--container container container--md">
         <div class="landing__title">
-            <h1 class="h1 title">
-                {{ page.title }}
-            </h1>
+            {% if section.settings.title != blank %}
+                <h2 class="h2 title">
+                    {{ section.settings.title }}
+                </h2>
+            {% endif %}
         </div>
         <div class="landing__banner">
             {% if page.metafields.custom.landing_page_media != blank %}
@@ -30,12 +32,12 @@
                                     </div>
                                     <div class="price__title-wrapper">
                                         <a href="{{  product.url }}">
-                                        <div class="price">
-                                            {{ product.price | money }}
-                                        </div>
-                                        <div class="title">
-                                            {{  product.title }}
-                                        </div>
+                                            <div class="price">
+                                                {{ product.price | money }}
+                                            </div>
+                                            <div class="title">
+                                                {{  product.title }}
+                                            </div>
                                         </a>
                                     </div>
                                     {% render 'buy-buttons' , product: product, show_payment_button: false, form_id: form_id %}
@@ -58,15 +60,15 @@
     "name": "Landing Page",
     "settings": [
         {
+            "type":"text",
+            "id":"title",
+            "label": "Title"
+        },
+        {
             "type": "color_scheme",
             "id": "color_scheme",
             "label": "t:global.colors.scheme",
             "default": "scheme-1"
-        }
-    ],
-    "presets": [
-        {
-            "name": "Landing Page"
         }
     ]
 }

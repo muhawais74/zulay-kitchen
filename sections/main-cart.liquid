@@ -47,22 +47,24 @@
 
               <tbody class="order-summary__body">
                 {%- for line_item in cart.items -%}
-                  <tr>
+                  <tr class="cart-item {% if line_item.parent_relationship.parent != null %}cart-item__nested-line{% endif %} {% if line_item.variant_id == 46988164235502 %} bundle--parent {% endif %}">
                     <td>{%- render 'line-item', line_item: line_item, show_quantity_selector: true -%}</td>
 
-                    <td class="text-center">
-                      <div class="v-stack gap-2">
-                        <line-item-quantity class="v-stack justify-items-center gap-2">
-                          {%- render 'quantity-selector', line_item: line_item, size: 'sm' -%}
+                    <td class="text-center quantity__selector-wrapper">
+                      {% unless line_item.variant_id == 46988164235502 %}
+                        <div class="v-stack gap-2">
+                          <line-item-quantity class="v-stack justify-items-center gap-2">
+                            {%- render 'quantity-selector', line_item: line_item, size: 'sm' -%}
 
-                          <a href="{{ line_item.url_to_remove }}" class="link text-xs" aria-label="{{ 'cart.order.remove_with_title' | t: title: line_item.title | escape }}">
-                            {{- 'cart.order.remove' | t -}}
-                          </a>
-                        </line-item-quantity>
-                      </div>
+                            <a href="{{ line_item.url_to_remove }}" class="link text-xs" aria-label="{{ 'cart.order.remove_with_title' | t: title: line_item.title | escape }}">
+                              {{- 'cart.order.remove' | t -}}
+                            </a>
+                          </line-item-quantity>
+                        </div>
+                      {% endunless %}
                     </td>
 
-                    <td class="text-end">
+                    <td class="text-end total__price">
                       {%- if settings.currency_code_enabled -%}
                         {{- line_item.final_line_price | money_with_currency -}}
                       {%- else -%}
