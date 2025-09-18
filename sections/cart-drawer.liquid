@@ -13,7 +13,7 @@
     <div class="cart-drawer__items">
       {%- for line_item in cart.items -%}
         {% assign quantity_selector_show = true %}
-        <div class="line-item {% if line_item.variant_id == 46988164235502 %} bundle--parent {% endif %}">
+        <div class="line-item {% if line_item.variant_id == 46988164235502 %} bundle--parent {% endif %} {% if line_item.parent_relationship.parent != null %}cart-item__nested-line{% endif %}">
           {% if line_item.variant_id == 46988164235502 %} {% assign quantity_selector_show = false %} {% endif %}
           {%- render 'line-item', line_item: line_item, show_quantity_selector: quantity_selector_show -%}
         </div>
