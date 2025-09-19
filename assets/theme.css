@@ -5288,6 +5288,9 @@ product-rerender {
   color: #fff;
   bottom: 0;
 }
+label.color-swatch.is-disabled {
+  display: none;
+}
 @media screen and (min-width: 1400px) {
   .mega-menu {
     --mega-menu-gap: 6.25rem;
