@@ -86,6 +86,8 @@
               {%- endfor -%}
             </blog-posts>
 
+            {% render 'blogs-schema' , blog: blog %}
+
             {%- render 'pagination', paginate: paginate -%}
           {%- endpaginate -%}
         </div>
