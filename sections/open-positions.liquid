@@ -1,101 +1,101 @@
-{%- if section.blocks.size > 0 -%}
-  <style>
+<style>
     #shopify-section-{{ section.id }} {
-      --multi-column-gap: {% if section.settings.spacing == 'xs' %}1.5rem{% elsif section.settings.spacing == 'sm' %}2.5rem{% elsif section.settings.spacing == 'md' %}3.125rem{% else %}4.375rem{% endif %};
-      --multi-column-column-width: {% if section.settings.stack_on_mobile %}100%{% else %}53vw{% endif %};
-      --multi-column-grid: {% if section.settings.stack_on_mobile %}auto / repeat(auto-fit, var(--multi-column-column-width)){% else %}auto / auto-flow var(--multi-column-column-width){% endif %};
-      --multi-column-content-alignment: safe {{ section.settings.content_alignment }};
+        --multi-column-gap: {% if section.settings.spacing == 'xs' %}1.5rem{% elsif section.settings.spacing == 'sm' %}2.5rem{% elsif section.settings.spacing == 'md' %}3.125rem{% else %}4.375rem{% endif %};
+        --multi-column-column-width: {% if section.settings.stack_on_mobile %}100%{% else %}53vw{% endif %};
+        --multi-column-grid: {% if section.settings.stack_on_mobile %}auto / repeat(auto-fit, var(--multi-column-column-width)){% else %}auto / auto-flow var(--multi-column-column-width){% endif %};
+        --multi-column-content-alignment: safe {{ section.settings.content_alignment }};
     }
 
     @media screen and (min-width: 700px) {
-      #shopify-section-{{ section.id }} {
+        #shopify-section-{{ section.id }} {
         --multi-column-columns-per-row: 2;
         --multi-column-column-width: {% if section.settings.stack_on_mobile %}calc(100% / var(--multi-column-columns-per-row) - var(--multi-column-gap) * ((var(--multi-column-columns-per-row) - 1) / var(--multi-column-columns-per-row))){% else %}38vw{% endif %};
-      }
+        }
     }
 
     @media screen and (min-width: 999px) {
-      #shopify-section-{{ section.id }} {
+        #shopify-section-{{ section.id }} {
         --multi-column-gap: {% if section.settings.spacing == 'xs' %}1.875rem{% elsif section.settings.spacing == 'sm' %}3.125rem{% elsif section.settings.spacing == 'md' %}4.375rem{% else %}5.625rem{% endif %};
         --multi-column-columns-per-row: {{ section.settings.columns_per_row }};
         --multi-column-column-width: calc(100% / var(--multi-column-columns-per-row) - var(--multi-column-gap) * ((var(--multi-column-columns-per-row) - 1) / var(--multi-column-columns-per-row)));
         --multi-column-grid: auto / repeat(auto-fit, var(--multi-column-column-width));
-      }
+        }
     }
-  </style>
+</style>
 
-  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
-  <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
-    <div class="container">
-      <div class="section-stack">
-        {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, content: section.settings.content, text_alignment: section.settings.content_alignment -%}
 
+<div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+<div class="container">
+    <div class="section-stack">
+    {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, content: section.settings.content, text_alignment: section.settings.content_alignment -%}
+    {% if page.metafields.custom.open_positions != blank %}
         <multi-column class="multi-column {% unless section.settings.stack_on_mobile %}scroll-area snap-x bleed md:unbleed{% endunless %}">
-          {%- for block in section.blocks -%}
-            <div class="multi-column__item {% if section.settings.overlap_image and block.settings.title != blank %}multi-column__item--overlap{% endif %} snap-center group" {{ block.shopify_attributes }}>
-              {%- capture sizes_attribute -%}
+        {%- for open_position in page.metafields.custom.open_positions.value -%}
+            <div class="multi-column__item {% if section.settings.overlap_image and open_position.heading != blank %}multi-column__item--overlap{% endif %} snap-center group" >
+            {%- capture sizes_attribute -%}
                 (max-width: 699px) 53vw, (max-width: 999px) 38vw, calc((100vw - 3rem * 2) / {{ section.settings.columns_per_row }})
-              {%- endcapture -%}
+            {%- endcapture -%}
 
-              {%- liquid
+            {%- liquid
                 capture media_content
-                  if block.type == 'image_with_text' and block.settings.image != blank
+                if open_position.image != blank
                     assign loading_strategy = nil
 
                     if forloop.index > 2 or section.location == 'footer'
-                      assign loading_strategy = 'lazy'
+                    assign loading_strategy = 'lazy'
                     endif
 
-                    echo block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: loading_strategy, sizes: sizes_attribute, widths: '300,400,500,600,800,1000,1200,1400,1600,1800', class: 'zoom-image group-hover:zoom'
-                  elsif block.type == 'video_with_text' and block.settings.video != blank
-                    if block.settings.autoplay and block.settings.loop
-                      assign show_controls = false
+                    echo open_position.image | image_url: width: open_position.image.width | image_tag: loading: loading_strategy, sizes: sizes_attribute, widths: '300,400,500,600,800,1000,1200,1400,1600,1800', class: 'zoom-image group-hover:zoom'
+                elsif open_position.video != blank
+                    if open_position.autoplay and open_position.loop
+                    assign show_controls = false
                     else
-                      assign show_controls = true
+                    assign show_controls = true
                     endif
 
-                    render 'media', media: block.settings.video, autoplay: block.settings.autoplay, loop: block.settings.loop, controls: show_controls, sizes: sizes_attribute, play_button_background: block.settings.play_button_background
-                  endif
+                    render 'media', media: open_position.video, autoplay: open_position.autoplay, loop: open_position.loop, controls: show_controls, sizes: sizes_attribute, play_button_background: open_position.play_button_background
+                endif
                 endcapture
-              -%}
+            -%}
 
-              {%- if media_content != blank -%}
-                {%- if block.type == 'image_with_text' and block.settings.link_url != blank -%}
-                  <a href="{{ block.settings.link_url }}" class="overflow-hidden" target="_blank">
+            {%- if media_content != blank -%}
+                {%- if open_position.image != blank and open_position.url != blank -%}
+                <a href="{{ open_position.url }}" class="overflow-hidden" target="_blank">
                     {{- media_content -}}
-                  </a>
+                </a>
                 {%- else -%}
-                  <div class="overflow-hidden">
+                <div class="overflow-hidden">
                     {{- media_content -}}
-                  </div>
-                {%- endif -%}
-              {%- endif -%}
-
-              {%- if block.settings.title != blank or block.settings.content != blank or block.settings.link_text != blank -%}
-                <div class="prose text-{{ section.settings.text_alignment }}">
-                  {%- if block.settings.title != blank -%}
-                    <p class="{{ block.settings.heading_tag }}">{{ block.settings.title }}</p>
-                  {%- endif -%}
-
-                  {{- block.settings.content -}}
-
-                  {%- if block.settings.link_text != blank -%}
-                    <a href="{{ block.settings.link_url }}" class="link" target="_blank">{{ block.settings.link_text | escape }}</a>
-                  {%- endif -%}
                 </div>
-              {%- endif -%}
+                {%- endif -%}
+            {%- endif -%}
+
+            {%- if open_position.heading != blank or open_position.content != blank or open_position.link_label != blank -%}
+                <div class="prose text-{{ section.settings.text_alignment }}">
+                {%- if open_position.heading != blank -%}
+                    <p class="h3">{{ open_position.heading }}</p>
+                {%- endif -%}
+
+                {{- open_position.content | metafield_tag -}}
+
+                {%- if open_position.link_label != blank -%}
+                    <a href="{{ open_position.url }}" class="link" target="_blank">{{ open_position.link_label | escape }}</a>
+                {%- endif -%}
+                </div>
+            {%- endif -%}
             </div>
-          {%- endfor -%}
+        {%- endfor -%}
         </multi-column>
-      </div>
+    {% endif %}
     </div>
-  </div>
-{%- endif -%}
+</div>
+</div>
 
 {% schema %}
 {
-  "name": "t:sections.multi_column.name",
+  "name": "Career - Open Positions",
   "class": "shopify-section--multi-column",
   "tag": "section",
   "disabled_on": {
@@ -374,7 +374,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.multi_column.presets.multi_column.name",
+      "name": "Career - Open Positions",
       "blocks": [
         {
           "type": "image_with_text",
