@@ -56,9 +56,19 @@
           "settings": {
             "title": "Column title",
             "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_url": "",
-            "link_text": ""
+            "content": "<p>Bring stories to life through engaging, viral worthy videos across TikTok, Instagram, YouTube, and more. If you’re a creative editor who knows how to capture attention online, this role is for you.</p>",
+            "link_url": "https://www.notion.so/Social-Media-Video-Editor-26ff2066906a80a581efeacaebd93764",
+            "link_text": "CLICK HERE TO APPLY"
+          }
+        },
+        "image_with_text_UcrBXA": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Amazon Advertising Specialist",
+            "heading_tag": "h3",
+            "content": "<p>Drive growth by managing and optimizing Amazon ad campaigns that get our products seen and sold. If you’re data-driven and passionate about scaling performance, this role is for you.</p>",
+            "link_url": "https://www.notion.so/PPC-SPECIALIST-CORE-VALUES-TEST-276f2066906a80fb9f6cf4b076c2c879?source=copy_link",
+            "link_text": "CLICK HERE TO APPLY"
           }
         },
         "image_with_text_CxNA3U": {
@@ -66,7 +76,17 @@
           "settings": {
             "title": "Column title",
             "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "content": "<p>Help us find and attract top talent to grow our team. If you’re passionate about connecting people with opportunities and building strong teams, we’d love to hear from you.</p>",
+            "link_url": "https://boatneck-butterkase-1f1.notion.site/ZULAY-KITCHEN-COMPANY-CULTURE-271f2066906a80cebd6cd788660162a6?pvs=143",
+            "link_text": "CLICK HERE TO APPLY"
+          }
+        },
+        "image_with_text_Gkn6pd": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Photographer",
+            "heading_tag": "h3",
+            "content": "<p>Capture high-quality images that showcase our products and brand story. If you’ve got an eye for detail and love creating visuals that stand out, this role is for you.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -76,9 +96,19 @@
           "settings": {
             "title": "Column title",
             "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_url": "",
-            "link_text": ""
+            "content": "<p>Lead the way in discovering, developing, and launching innovative kitchen gadgets. If you’re driven by product ideas and love turning concepts into bestsellers, this is the role for you. </p>",
+            "link_url": "https://boatneck-butterkase-1f1.notion.site/ZULAY-KITCHEN-COMPANY-CULTURE-271f2066906a80cebd6cd788660162a6?pvs=143",
+            "link_text": "CLICK HERE TO APPLY"
+          }
+        },
+        "image_with_text_n8PpK7": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Product Sourcing Specialist",
+            "heading_tag": "h3",
+            "content": "<p>Discover and secure the best products by working directly with suppliers and manufacturers. If you’re detail-oriented, resourceful, and passionate about finding winning products, we want you on our team.</p>",
+            "link_url": "https://boatneck-butterkase-1f1.notion.site/ZULAY-KITCHEN-COMPANY-CULTURE-271f2066906a80cebd6cd788660162a6?pvs=143",
+            "link_text": "CLICK HERE TO APPLY"
           }
         }
       },
