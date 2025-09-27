@@ -41,18 +41,37 @@
         "disabled": false,
         "settings": {}
       },
+      "13951170544780599758": {
+        "type": "shopify://apps/tapita-seo-speed/blocks/app-embed/cd37ca7a-40ad-4fdc-afd3-768701482209",
+        "disabled": false,
+        "settings": {
+          "hide_price": false
+        }
+      },
       "10830403595879607806": {
         "type": "shopify://apps/reviews-io/blocks/reviewsio-core/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": true,
+        "disabled": false,
         "settings": {
-          "url_key": "zulay-reviews-io",
+          "url_key": "zulaykitchen.com",
           "lang": "auto",
           "enable_syndication": false
         }
       },
+      "16274361319697914395": {
+        "type": "shopify://apps/reviews-io/blocks/reviewsio-floating/92a082e5-b297-4e88-b428-ac96cbc505f9",
+        "disabled": false,
+        "settings": {
+          "widget_id": "zulaykitchen.com",
+          "show_all": true,
+          "show_index": true,
+          "show_product": true,
+          "show_collection": true,
+          "show_cart": true
+        }
+      },
       "15316669992541710076": {
         "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-snippet/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "star": "#000000",
           "text_color": "#333333",
@@ -65,25 +84,6 @@
           "show_popup": true,
           "anchor_to_reviews_widget": false,
           "show_empty_stars": false
-        }
-      },
-      "16274361319697914395": {
-        "type": "shopify://apps/reviews-io/blocks/reviewsio-floating/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": true,
-        "settings": {
-          "widget_id": "",
-          "show_all": true,
-          "show_index": true,
-          "show_product": true,
-          "show_collection": true,
-          "show_cart": true
-        }
-      },
-      "13951170544780599758": {
-        "type": "shopify://apps/tapita-seo-speed/blocks/app-embed/cd37ca7a-40ad-4fdc-afd3-768701482209",
-        "disabled": false,
-        "settings": {
-          "hide_price": false
         }
       }
     },
