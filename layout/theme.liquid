@@ -143,6 +143,15 @@
       {%- if request.page_type != 'password' -%}
         {%- sections 'footer-group' -%}
       {%- endif -%}
-    </main>s
+    </main>
+    <script>
+      ratingSnippet("ruk_rating_snippet",{
+        store: "zulaykitchen.com",
+        color: "#0E1311",
+        linebreak: true,
+        usePolaris: true,
+        text: "Reviews"
+      });
+    </script>
   </body>
 </html>
