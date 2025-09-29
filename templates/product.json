@@ -24,7 +24,14 @@
         },
         "bazaarvoice_reviews_photos_rating_summary_block_TbYfig": {
           "type": "shopify://apps/bazaarvoice-reviews-photos/blocks/rating-summary-block/766ed9d3-b120-48f3-8444-448f45152f47",
+          "disabled": true,
           "settings": {}
+        },
+        "reviews_io_reviewsio_rating_bar_UazehR": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-bar/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {
+            "widget_id": ""
+          }
         },
         "price": {
           "type": "price",
@@ -87,6 +94,7 @@
         "vendor",
         "title",
         "bazaarvoice_reviews_photos_rating_summary_block_TbYfig",
+        "reviews_io_reviewsio_rating_bar_UazehR",
         "price",
         "payment_terms",
         "separator",
