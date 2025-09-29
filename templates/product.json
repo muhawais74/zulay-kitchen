@@ -152,13 +152,13 @@
         "reviews_io_reviewsio_rating_bar_BFiHkj": {
           "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-bar/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {
-            "widget_id": ""
+            "widget_id": "polaris"
           }
         },
         "reviews_io_reviewsio_ugc_Ee86eN": {
           "type": "shopify://apps/reviews-io/blocks/reviewsio-ugc/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {
-            "widget_id": "",
+            "widget_id": "polaris",
             "is_product_specific": false,
             "vertical_spacing": 10,
             "horizontal_spacing": 10
