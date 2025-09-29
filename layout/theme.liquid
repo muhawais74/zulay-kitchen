@@ -146,12 +146,16 @@
     </main>
     <script>
       setTimeout(() => {
-        ratingSnippet("ruk_rating_snippet",{
+        ratingSnippet("ruk_rating_snippet", {
           store: "zulaykitchen.com",
-          color: "#0E1311",
-          linebreak: true,
+          mode: "default",
+          color: "#FFD700",
+          linebreak: false,
+          text: "Reviews",
+          singularText: "Review",
+          lang: "en",
           usePolaris: true,
-          text: "Reviews"
+          showEmptyStars: false,
         });
       }, 3000)
     </script>
