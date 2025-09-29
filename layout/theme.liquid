@@ -145,13 +145,15 @@
       {%- endif -%}
     </main>
     <script>
-      ratingSnippet("ruk_rating_snippet",{
-        store: "zulaykitchen.com",
-        color: "#0E1311",
-        linebreak: true,
-        usePolaris: true,
-        text: "Reviews"
-      });
+      setTimeout(() => {
+        ratingSnippet("ruk_rating_snippet",{
+          store: "zulaykitchen.com",
+          color: "#0E1311",
+          linebreak: true,
+          usePolaris: true,
+          text: "Reviews"
+        });
+      }, 3000)
     </script>
   </body>
 </html>
