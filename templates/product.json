@@ -127,7 +127,7 @@
           "type": "shopify://apps/reviews-io/blocks/reviewsio-card-carousel/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {
             "star": "#000000",
-            "review_type": "product",
+            "review_type": "product_current",
             "reviews_shown": 20,
             "header_bg_colour": "#000000",
             "header_colour": "#ffffff",
@@ -182,6 +182,7 @@
       "blocks": {
         "bazaarvoice_reviews_photos_reviews_block_P4gF7R": {
           "type": "shopify://apps/bazaarvoice-reviews-photos/blocks/reviews-block/766ed9d3-b120-48f3-8444-448f45152f47",
+          "disabled": true,
           "settings": {}
         }
       },
