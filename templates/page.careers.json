@@ -48,13 +48,13 @@
         "remove_vertical_spacing": false
       }
     },
-    "multi_column_fqCwfA": {
-      "type": "multi-column",
+    "open_positions_hzNmdf": {
+      "type": "open-positions",
       "blocks": {
-        "image_with_text_Fqjh6y": {
+        "image_with_text_Q8Yri9": {
           "type": "image_with_text",
           "settings": {
-            "title": "Social Media Video Editor",
+            "title": "Column title",
             "heading_tag": "h3",
             "content": "<p>Bring stories to life through engaging, viral worthy videos across TikTok, Instagram, YouTube, and more. If you’re a creative editor who knows how to capture attention online, this role is for you.</p>",
             "link_url": "https://www.notion.so/Social-Media-Video-Editor-26ff2066906a80a581efeacaebd93764",
@@ -71,10 +71,10 @@
             "link_text": "CLICK HERE TO APPLY"
           }
         },
-        "image_with_text_fM8fyD": {
+        "image_with_text_CxNA3U": {
           "type": "image_with_text",
           "settings": {
-            "title": "Recruiter",
+            "title": "Column title",
             "heading_tag": "h3",
             "content": "<p>Help us find and attract top talent to grow our team. If you’re passionate about connecting people with opportunities and building strong teams, we’d love to hear from you.</p>",
             "link_url": "https://boatneck-butterkase-1f1.notion.site/ZULAY-KITCHEN-COMPANY-CULTURE-271f2066906a80cebd6cd788660162a6?pvs=143",
@@ -91,10 +91,10 @@
             "link_text": ""
           }
         },
-        "image_with_text_Apf7VW": {
+        "image_with_text_xXPKVi": {
           "type": "image_with_text",
           "settings": {
-            "title": "Product Manager",
+            "title": "Column title",
             "heading_tag": "h3",
             "content": "<p>Lead the way in discovering, developing, and launching innovative kitchen gadgets. If you’re driven by product ideas and love turning concepts into bestsellers, this is the role for you. </p>",
             "link_url": "https://boatneck-butterkase-1f1.notion.site/ZULAY-KITCHEN-COMPANY-CULTURE-271f2066906a80cebd6cd788660162a6?pvs=143",
@@ -113,25 +113,22 @@
         }
       },
       "block_order": [
-        "image_with_text_Fqjh6y",
-        "image_with_text_UcrBXA",
-        "image_with_text_fM8fyD",
-        "image_with_text_Gkn6pd",
-        "image_with_text_Apf7VW",
-        "image_with_text_n8PpK7"
+        "image_with_text_Q8Yri9",
+        "image_with_text_CxNA3U",
+        "image_with_text_xXPKVi"
       ],
-      "name": "t:sections.multi_column.presets.multi_column.name",
+      "name": "Career - Open Positions",
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
         "columns_per_row": 3,
-        "stack_on_mobile": false,
+        "stack_on_mobile": true,
         "overlap_image": false,
         "content_alignment": "center",
         "text_alignment": "center",
         "spacing": "md",
         "subheading": "",
-        "title": "<strong>OPEN POSITIONS</strong>",
+        "title": "<strong>Open Positions</strong>",
         "content": ""
       }
     },
@@ -196,6 +193,23 @@
         "content_width": "sm",
         "text_position": "center",
         "remove_vertical_spacing": false
+      }
+    },
+    "team_Cx3q7W": {
+      "type": "team",
+      "name": "Company - Team",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "columns_per_row": 5,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing": "md",
+        "subheading": "",
+        "title": "",
+        "content": ""
       }
     },
     "multi_column_Xjrwe6": {
@@ -324,6 +338,7 @@
         "image_with_text_NgcMYL",
         "image_with_text_R8gxTC"
       ],
+      "disabled": true,
       "name": "t:sections.multi_column.presets.multi_column.name",
       "settings": {
         "color_scheme": "",
@@ -369,9 +384,10 @@
   "order": [
     "main",
     "rich_text_qQ7nAL",
-    "multi_column_fqCwfA",
+    "open_positions_hzNmdf",
     "rich_text_X6YjtL",
     "rich_text_YdcmeL",
+    "team_Cx3q7W",
     "multi_column_Xjrwe6",
     "rich_text_KLbH6T"
   ]
