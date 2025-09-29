@@ -464,6 +464,13 @@
             "show_taxes_notice": false
           }
         },
+        "rating_kVjYtE": {
+          "type": "rating",
+          "settings": {
+            "show_empty": true,
+            "rating_mode": "rating"
+          }
+        },
         "payment_terms_MNhc3r": {
           "type": "payment_terms",
           "settings": {}
@@ -513,6 +520,7 @@
         "title_4ip4GR",
         "badges_LyzhLc",
         "price_iHMbQ4",
+        "rating_kVjYtE",
         "payment_terms_MNhc3r",
         "separator_qdNDtg",
         "description_nxafxr",
