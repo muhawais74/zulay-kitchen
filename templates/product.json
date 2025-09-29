@@ -133,6 +133,7 @@
       "blocks": {
         "reviews_io_reviewsio_card_carousel_RHNYDb": {
           "type": "shopify://apps/reviews-io/blocks/reviewsio-card-carousel/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "disabled": true,
           "settings": {
             "star": "#000000",
             "review_type": "product_current",
@@ -157,26 +158,40 @@
             "logo_colour": "var(--logo-inverted)"
           }
         },
-        "reviews_io_reviewsio_rating_bar_BFiHkj": {
-          "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-bar/92a082e5-b297-4e88-b428-ac96cbc505f9",
+        "reviews_io_reviewsio_polaris_wgizPW": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-polaris/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {
-            "widget_id": "polaris"
-          }
-        },
-        "reviews_io_reviewsio_ugc_Ee86eN": {
-          "type": "shopify://apps/reviews-io/blocks/reviewsio-ugc/92a082e5-b297-4e88-b428-ac96cbc505f9",
-          "settings": {
-            "widget_id": "polaris",
-            "is_product_specific": false,
-            "vertical_spacing": 10,
-            "horizontal_spacing": 10
+            "star": "#000",
+            "review_type": "product_review,questions",
+            "per_page": 8,
+            "primary_btn_bg_color": "#000",
+            "primary_btn_border_color": "#000",
+            "primary_btn_text_color": "#fff",
+            "secondary_btn_border_color": "#000",
+            "secondary_btn_text_color": "#000",
+            "border_color": "#D9D9D9",
+            "heading_text_color": "#000",
+            "heading_font": "sans_serif_n4",
+            "body_text_color": "#000",
+            "badge_icon_color": "#000",
+            "badge_text_color": "#000",
+            "enable_rich_snippets": true,
+            "show_location": true,
+            "show_tab_selector": false,
+            "show_dates": true,
+            "show_avatar": true,
+            "enable_sentiment_analysis": false,
+            "enable_replies": false,
+            "widget_spacing": 0,
+            "capitalise_headers_and_buttons": false,
+            "show_review_title": false,
+            "default_sort": "date_desc"
           }
         }
       },
       "block_order": [
         "reviews_io_reviewsio_card_carousel_RHNYDb",
-        "reviews_io_reviewsio_rating_bar_BFiHkj",
-        "reviews_io_reviewsio_ugc_Ee86eN"
+        "reviews_io_reviewsio_polaris_wgizPW"
       ],
       "settings": {
         "color_scheme": "",
