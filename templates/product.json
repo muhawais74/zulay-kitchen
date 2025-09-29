@@ -120,41 +120,6 @@
         "title": "FAQs"
       }
     },
-    "1749882979817621f2": {
-      "type": "apps",
-      "blocks": {
-        "bazaarvoice_reviews_photos_reviews_block_P4gF7R": {
-          "type": "shopify://apps/bazaarvoice-reviews-photos/blocks/reviews-block/766ed9d3-b120-48f3-8444-448f45152f47",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "bazaarvoice_reviews_photos_reviews_block_P4gF7R"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "hide_product_information": false,
-        "stack_products": false,
-        "recommendations_count": 10,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "horizontal_spacing_factor": 1,
-        "vertical_spacing_factor": 1,
-        "subheading": "",
-        "title": "Related products",
-        "content": ""
-      }
-    },
     "1756824447b4d00862": {
       "type": "apps",
       "blocks": {
@@ -211,13 +176,48 @@
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false
       }
+    },
+    "1749882979817621f2": {
+      "type": "apps",
+      "blocks": {
+        "bazaarvoice_reviews_photos_reviews_block_P4gF7R": {
+          "type": "shopify://apps/bazaarvoice-reviews-photos/blocks/reviews-block/766ed9d3-b120-48f3-8444-448f45152f47",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "bazaarvoice_reviews_photos_reviews_block_P4gF7R"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "Related products",
+        "content": ""
+      }
     }
   },
   "order": [
     "main",
     "pdp_faqs_qG8Ywq",
+    "1756824447b4d00862",
     "1749882979817621f2",
-    "related-products",
-    "1756824447b4d00862"
+    "related-products"
   ]
 }
