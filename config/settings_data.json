@@ -50,7 +50,7 @@
       },
       "10830403595879607806": {
         "type": "shopify://apps/reviews-io/blocks/reviewsio-core/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "url_key": "zulaykitchen.com",
           "lang": "auto",
@@ -59,7 +59,7 @@
       },
       "15316669992541710076": {
         "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-snippet/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "star": "#000000",
           "text_color": "#333333",
@@ -76,7 +76,7 @@
       },
       "16274361319697914395": {
         "type": "shopify://apps/reviews-io/blocks/reviewsio-floating/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "widget_id": "zulaykitchen.com",
           "show_all": true,
