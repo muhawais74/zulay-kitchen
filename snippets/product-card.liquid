@@ -202,7 +202,8 @@ Supported variables
     {%- endif -%}
 
     {%- if show_rating -%}
-      <div class="ruk_rating_snippet" data-sku="{% for var_iant in product.variants %}[{{var_iant.sku}}{% unless forloop.last %},{% endunless %}]{% endfor %}"></div>
+      {% comment %} <div class="ruk_rating_snippet" data-sku="{% for var_iant in product.variants %}[{{var_iant.sku}}{% unless forloop.last %},{% endunless %}]{% endfor %}"></div> {% endcomment %}
+      <div class="ruk_rating_snippet" data-sku="{{ product.handle }};{{ product.variants | map: 'sku' | join: ';' }};{{ product.variants | map: 'id' | join: ';' }}"></div>
       {% comment %} {%- render 'product-rating', product: product, show_empty: settings.show_product_rating_if_empty, display_mode: settings.product_rating_mode -%} {% endcomment %}
     {%- endif -%}
   </div>
