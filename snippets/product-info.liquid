@@ -186,11 +186,15 @@ Supported variables
             {%- endif -%}
 
           {%- when 'rating' -%}
-            {%- if product != blank -%}
-              {%- render 'product-rating', product: product, show_empty: block.settings.show_empty, display_mode: block.settings.rating_mode, show_placeholder: false -%}
-            {%- else -%}
-              {%- render 'product-rating', show_placeholder: true -%}
-            {%- endif -%}
+            {% if featured_product == true %}
+              <div class="ruk_rating_snippet" data-sku="{{ product.handle }};{{ product.id }};{{ product.variants | map: 'id' | join: ';' }}"></div>
+            {% else %}
+              {%- if product != blank -%}
+                {%- render 'product-rating', product: product, show_empty: block.settings.show_empty, display_mode: block.settings.rating_mode, show_placeholder: false -%}
+              {%- else -%}
+                {%- render 'product-rating', show_placeholder: true -%}
+              {%- endif -%}
+            {% endif %}
 
           {%- when 'separator' -%}
             <hr>
