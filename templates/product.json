@@ -24,6 +24,11 @@
         },
         "bazaarvoice_reviews_photos_rating_summary_block_TbYfig": {
           "type": "shopify://apps/bazaarvoice-reviews-photos/blocks/rating-summary-block/766ed9d3-b120-48f3-8444-448f45152f47",
+          "disabled": true,
+          "settings": {}
+        },
+        "reviews_io_reviewsio_rating_output_trMLmy": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {}
         },
         "price": {
@@ -87,6 +92,7 @@
         "vendor",
         "title",
         "bazaarvoice_reviews_photos_rating_summary_block_TbYfig",
+        "reviews_io_reviewsio_rating_output_trMLmy",
         "price",
         "payment_terms",
         "separator",
@@ -120,11 +126,84 @@
         "title": "FAQs"
       }
     },
+    "1756824447b4d00862": {
+      "type": "apps",
+      "blocks": {
+        "reviews_io_reviewsio_card_carousel_RHNYDb": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-card-carousel/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "disabled": true,
+          "settings": {
+            "star": "#000000",
+            "review_type": "product_current",
+            "reviews_shown": 20,
+            "header_bg_colour": "#000000",
+            "header_colour": "#ffffff",
+            "header_star_colour": "#ffffff",
+            "heading_text_colour": "#0e1311",
+            "heading_font": "sans_serif_n4",
+            "body_text_colour": "#0e1311",
+            "badge_icon_colour": "#0e1311",
+            "badge_text_colour": "#0e1311",
+            "bg_start_colour": "#ffffff",
+            "bg_end_colour": "#ffffff",
+            "item_border_width": "0px",
+            "item_border_colour": "#f2f2f2",
+            "item_border_radius": "0px",
+            "item_shadow_size": "10px",
+            "item_shadow_colour": "#f2f2f2",
+            "enable_rich_snippets": false,
+            "disable_same_customer": false,
+            "logo_colour": "var(--logo-inverted)"
+          }
+        },
+        "reviews_io_reviewsio_polaris_wgizPW": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-polaris/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {
+            "star": "#ffd700",
+            "review_type": "product_review,questions",
+            "per_page": 8,
+            "primary_btn_bg_color": "#000000",
+            "primary_btn_border_color": "#000000",
+            "primary_btn_text_color": "#ffffff",
+            "secondary_btn_border_color": "#000000",
+            "secondary_btn_text_color": "#000000",
+            "border_color": "#d9d9d9",
+            "heading_text_color": "#000000",
+            "heading_font": "sans_serif_n4",
+            "body_text_color": "#000000",
+            "badge_icon_color": "#000000",
+            "badge_text_color": "#000000",
+            "enable_rich_snippets": true,
+            "show_location": true,
+            "show_tab_selector": false,
+            "show_dates": true,
+            "show_avatar": true,
+            "enable_sentiment_analysis": false,
+            "enable_replies": false,
+            "widget_spacing": 0,
+            "capitalise_headers_and_buttons": false,
+            "show_review_title": false,
+            "default_sort": "date_desc"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_io_reviewsio_card_carousel_RHNYDb",
+        "reviews_io_reviewsio_polaris_wgizPW"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
+    },
     "1749882979817621f2": {
       "type": "apps",
       "blocks": {
         "bazaarvoice_reviews_photos_reviews_block_P4gF7R": {
           "type": "shopify://apps/bazaarvoice-reviews-photos/blocks/reviews-block/766ed9d3-b120-48f3-8444-448f45152f47",
+          "disabled": true,
           "settings": {}
         }
       },
@@ -154,70 +233,13 @@
         "title": "Related products",
         "content": ""
       }
-    },
-    "1756824447b4d00862": {
-      "type": "apps",
-      "blocks": {
-        "reviews_io_reviewsio_card_carousel_RHNYDb": {
-          "type": "shopify://apps/reviews-io/blocks/reviewsio-card-carousel/92a082e5-b297-4e88-b428-ac96cbc505f9",
-          "settings": {
-            "star": "#000000",
-            "review_type": "product",
-            "reviews_shown": 20,
-            "header_bg_colour": "#000000",
-            "header_colour": "#ffffff",
-            "header_star_colour": "#ffffff",
-            "heading_text_colour": "#0e1311",
-            "heading_font": "sans_serif_n4",
-            "body_text_colour": "#0e1311",
-            "badge_icon_colour": "#0e1311",
-            "badge_text_colour": "#0e1311",
-            "bg_start_colour": "#ffffff",
-            "bg_end_colour": "#ffffff",
-            "item_border_width": "0px",
-            "item_border_colour": "#f2f2f2",
-            "item_border_radius": "0px",
-            "item_shadow_size": "10px",
-            "item_shadow_colour": "#f2f2f2",
-            "enable_rich_snippets": false,
-            "disable_same_customer": false,
-            "logo_colour": "var(--logo-inverted)"
-          }
-        },
-        "reviews_io_reviewsio_rating_bar_BFiHkj": {
-          "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-bar/92a082e5-b297-4e88-b428-ac96cbc505f9",
-          "settings": {
-            "widget_id": ""
-          }
-        },
-        "reviews_io_reviewsio_ugc_Ee86eN": {
-          "type": "shopify://apps/reviews-io/blocks/reviewsio-ugc/92a082e5-b297-4e88-b428-ac96cbc505f9",
-          "settings": {
-            "widget_id": "",
-            "is_product_specific": false,
-            "vertical_spacing": 10,
-            "horizontal_spacing": 10
-          }
-        }
-      },
-      "block_order": [
-        "reviews_io_reviewsio_card_carousel_RHNYDb",
-        "reviews_io_reviewsio_rating_bar_BFiHkj",
-        "reviews_io_reviewsio_ugc_Ee86eN"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false
-      }
     }
   },
   "order": [
     "main",
     "pdp_faqs_qG8Ywq",
+    "1756824447b4d00862",
     "1749882979817621f2",
-    "related-products",
-    "1756824447b4d00862"
+    "related-products"
   ]
 }

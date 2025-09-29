@@ -144,5 +144,20 @@
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
+    <script>
+      setTimeout(() => {
+        ratingSnippet("ruk_rating_snippet", {
+          store: "zulaykitchen.com",
+          mode: "default",
+          color: "#FFD700",
+          linebreak: false,
+          text: "",
+          singularText: "",
+          lang: "en",
+          usePolaris: true,
+          showEmptyStars: false,
+        });
+      }, 3000)
+    </script>
   </body>
 </html>

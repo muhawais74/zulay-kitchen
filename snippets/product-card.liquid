@@ -202,7 +202,8 @@ Supported variables
     {%- endif -%}
 
     {%- if show_rating -%}
-      {%- render 'product-rating', product: product, show_empty: settings.show_product_rating_if_empty, display_mode: settings.product_rating_mode -%}
+       <div class="ruk_rating_snippet" data-sku="{{ product.handle }};{{ product.id }};{{ product.variants | map: 'id' | join: ';' }}"></div>
+      {% comment %} {%- render 'product-rating', product: product, show_empty: settings.show_product_rating_if_empty, display_mode: settings.product_rating_mode -%} {% endcomment %}
     {%- endif -%}
   </div>
 </product-card>
