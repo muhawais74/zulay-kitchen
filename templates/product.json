@@ -71,7 +71,7 @@
           "settings": {
             "show_payment_button": true,
             "show_gift_card_recipient": true,
-            "atc_button_background": "#1db954",
+            "atc_button_background": "#307a07",
             "atc_button_text_color": "",
             "payment_button_background": "",
             "payment_button_text_color": ""
@@ -106,6 +106,7 @@
         "color_scheme": "",
         "container_size": "lg",
         "product_info_size": 47,
+        "show_upsell": true,
         "show_sticky_add_to_cart": true,
         "center_basic_info": false,
         "adaptive_media": "adaptive",
