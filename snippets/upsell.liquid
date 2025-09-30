@@ -1,0 +1,72 @@
+{% style %}
+    .upsell__items-container {
+        border: 1px solid #00000030;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    .upsell__item {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid #00000030;
+        padding: 10px;
+        margin: 5px;
+        align-items: center;
+    }
+    .pdp__upsell-container input[type="checkbox"] {
+        display: none;
+    }
+
+    .pdp__upsell-container .checkbox__dot {
+        flex: 30%;
+        max-width: 32px;
+        height: 32px;
+        border: 2px solid #999;
+        display: inline-block;
+        position: relative;
+        transition: all 0.3s ease;
+        background: transparent;
+        border-radius: 100%;
+        align-self: center;
+    }
+    .pdp__upsell-container input[type="checkbox"]:checked + label {
+        border-color: green;
+    
+    }
+    .pdp__upsell-container input[type="checkbox"]:checked + label .checkbox__dot {
+        border-color: green;
+        background: green;
+        box-shadow: inset 0 0 0 3px #fff;
+    }
+
+    .pdp__upsell-container input[type="checkbox"]:checked + label .checkbox__dot::after {
+        border-color: #4CAF50;
+        opacity: 1;
+    }
+{% endstyle %}
+<div class="pdp__upsell-container">
+    <div class="pdp__upsell-wrapper">
+        {% for upsell in product.metafields.product.pdp_upsell.value %}
+            <div class="upsell__items-container">
+                {% for prod_uct in upsell.product.value %}
+                    <input type="checkbox" name="{{ prod_uct.handle }}" id="{{ prod_uct.handle }}--{{ forloop.index }}">
+                    <label class="upsell__item" for="{{ prod_uct.handle }}--{{ forloop.index }}">
+                        <div class="img">
+                            {{ prod_uct.featured_image | image_url: width: 100, height: 100 | image_tag: class:"upsell__img" }}
+                        </div>
+                        <div class="info__content">
+                            <span class="title">
+                                {{ prod_uct.title }}
+                            </span>
+                            <span class="price">
+                                {{ prod_uct.price | money }}
+                            </span>
+                        </div>
+                        <div class="checkbox__dot">
+
+                        </div>
+                    </label>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

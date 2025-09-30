@@ -357,6 +357,9 @@ Supported variables
             -%}
 
           {%- when 'buy_buttons' -%}
+            {% if section.settings.show_upsell == true  %}
+              {% render 'upsell' , product: product %}
+            {% endif %}
             {%- render 'buy-buttons',
                 product: product,
                 form_id: product_form_id,
