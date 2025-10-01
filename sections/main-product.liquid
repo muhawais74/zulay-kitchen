@@ -220,7 +220,6 @@
             endif
           endif
         -%}
-
         {%- render 'button', content: button_content, style: button_style, type: 'submit', form: product_form_id, disabled: button_disabled -%}
       </buy-buttons>
     </product-sticky-bar>
@@ -330,6 +329,12 @@ quick buy information in a template, that will be extracted in JS, which ensures
       "step": 1,
       "unit": "%",
       "default": 35
+    },
+    {
+      "type": "checkbox",
+      "id":"show_upsell",
+      "label":"Show Upsell?",
+      "default": true
     },
     {
       "type": "checkbox",
