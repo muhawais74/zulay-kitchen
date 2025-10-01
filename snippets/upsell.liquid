@@ -87,14 +87,15 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const upsellItemsContainer = document.querySelector('[js-upsell-items-container]');
-        const buyButton = upsellItemsContainer.closest('[data-block-type="buy-buttons"]');
+        const buyButtonBlock = upsellItemsContainer.closest('[data-block-type="buy-buttons"]');
+        const form = buyButtonBlock.querySelector('product-form form');
+
         const upsellItems = upsellItemsContainer.querySelectorAll('input');
 
-        console.log({buyButton});
         upsellItems.length && upsellItems.forEach((x) => {
             x.addEventListener('change', function(e) {
                 const { currentTarget } = e;
-                console.log({currentTarget}, currentTarget.checked);
+                
             })
         })
         
