@@ -61,7 +61,7 @@
             <div class="upsell__items-container" js-upsell-items-container>
                 <h3 class="h3 upsell__title">You may like</h3>
                 {% for prod_uct in upsell.product.value %}
-                    <input type="checkbox" name="{{ prod_uct.handle }}" id="{{ prod_uct.handle }}--{{ forloop.index }}" data-variant-id="{{ product.selected_or_first_available_variant.id }}">
+                    <input type="checkbox" name="{{ prod_uct.handle }}" id="{{ prod_uct.handle }}--{{ forloop.index }}" data-variant-id="{{ prod_uct.selected_or_first_available_variant.id }}">
                     <label class="upsell__item" for="{{ prod_uct.handle }}--{{ forloop.index }}">
                         <div class="img">
                             {{ prod_uct.featured_image | image_url: width: 100, height: 100 | image_tag: class:"upsell__img" }}
@@ -83,21 +83,76 @@
         {% endfor %}
     </div>
 </div>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const upsellItemsContainer = document.querySelector('[js-upsell-items-container]');
-        const buyButtonBlock = upsellItemsContainer.closest('[data-block-type="buy-buttons"]');
-        const form = buyButtonBlock.querySelector('product-form form');
+        const upsellContainers = document.querySelectorAll('[js-upsell-items-container]');
 
-        const upsellItems = upsellItemsContainer.querySelectorAll('input');
+        upsellContainers.forEach(container => {
+            const buyButtonBlock = container.closest('[data-block-type="buy-buttons"]');
+            if (!buyButtonBlock) return;
 
-        upsellItems.length && upsellItems.forEach((x) => {
-            x.addEventListener('change', function(e) {
-                const { currentTarget } = e;
-                
-            })
-        })
-        
-    })
+            const form = buyButtonBlock.querySelector('product-form form');
+            if (!form) return;
+
+            const upsellItems = container.querySelectorAll('input[type="checkbox"]');
+
+            // keep reference to the original main product input (name="id")
+            const originalMainInput = form.querySelector('[name="id"]');
+            if (!originalMainInput) return;
+
+            function rebuildFormItems() {
+                // collect checked upsell variant ids in DOM order
+                const checkedVariantIds = Array.from(upsellItems)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.dataset.variantId)
+                    .filter(Boolean);
+
+                // remove only inputs we generated previously (leave the original main input in DOM)
+                form.querySelectorAll('input[data-upsell-generated="true"]').forEach(el => el.remove());
+
+                if (checkedVariantIds.length > 0) {
+                    // convert main product input to items[0][id]
+                    originalMainInput.setAttribute('name', 'items[0][id]');
+                    originalMainInput.setAttribute('data-index', '0');
+
+                    // add quantity input for main product (generated)
+                    const mainQty = document.createElement('input');
+                    mainQty.type = 'hidden';
+                    mainQty.name = 'items[0][quantity]';
+                    mainQty.value = '1';
+                    mainQty.setAttribute('data-upsell-generated', 'true');
+                    mainQty.setAttribute('data-index', '0');
+                    form.appendChild(mainQty);
+
+                    // append upsell items with sequential indexes starting at 1 (generated)
+                    checkedVariantIds.forEach((variantId, i) => {
+                        const index = i + 1;
+                        const idInput = document.createElement('input');
+                        idInput.type = 'hidden';
+                        idInput.name = `items[${index}][id]`;
+                        idInput.value = variantId;
+                        idInput.setAttribute('data-upsell-generated', 'true');
+                        idInput.setAttribute('data-index', String(index));
+
+                        const qtyInput = document.createElement('input');
+                        qtyInput.type = 'hidden';
+                        qtyInput.name = `items[${index}][quantity]`;
+                        qtyInput.value = '1';
+                        qtyInput.setAttribute('data-upsell-generated', 'true');
+                        qtyInput.setAttribute('data-index', String(index));
+
+                        form.appendChild(idInput);
+                        form.appendChild(qtyInput);
+                    });
+                } else {
+                    // no upsells selected -> revert main input back to name="id"
+                    originalMainInput.setAttribute('name', 'id');
+                    originalMainInput.removeAttribute('data-index');
+                }
+            }
+
+            // attach listeners
+            upsellItems.forEach(cb => cb.addEventListener('change', rebuildFormItems));
+        });
+    });
 </script>
