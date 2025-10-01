@@ -89,6 +89,12 @@
         const upsellItemsContainer = document.querySelector('[js-upsell-items-container]');
         const upsellItems = upsellItemsContainer.querySelectorAll('input');
         console.log({upsellItemsContainer}, {upsellItems}, upsellItems.length);
+        upsellItems.length && upsellItems.forEach((x) => {
+            x.addEventListener('change', function(e) {
+                const { currentTarget } = e;
+                console.log({currentTarget}) 
+            })
+        })
         
     })
 </script>
