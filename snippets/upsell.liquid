@@ -64,7 +64,7 @@
     <div class="pdp__upsell-wrapper">
         {% for upsell in product.metafields.product.pdp_upsell.value %}
             <div class="upsell__items-container" js-upsell-items-container>
-                <h3 class="h3 upsell__title">Frequently Bought Together</h3>
+                <h4 class="h4 upsell__title">Frequently Bought Together</h4>
                 {% for prod_uct in upsell.product.value %}
                     <input type="checkbox" name="{{ prod_uct.handle }}" id="{{ prod_uct.handle }}--{{ forloop.index }}" data-variant-id="{{ prod_uct.selected_or_first_available_variant.id }}">
                     <label class="upsell__item" for="{{ prod_uct.handle }}--{{ forloop.index }}">
