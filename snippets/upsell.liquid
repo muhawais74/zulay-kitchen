@@ -61,7 +61,7 @@
             <div class="upsell__items-container" js-upsell-items-container>
                 <h3 class="h3 upsell__title">You may like</h3>
                 {% for prod_uct in upsell.product.value %}
-                    <input type="checkbox" name="{{ prod_uct.handle }}" id="{{ prod_uct.handle }}--{{ forloop.index }}">
+                    <input type="checkbox" name="{{ prod_uct.handle }}" id="{{ prod_uct.handle }}--{{ forloop.index }}" data-variant-id="{{ product.selected_or_first_available_variant.id }}">
                     <label class="upsell__item" for="{{ prod_uct.handle }}--{{ forloop.index }}">
                         <div class="img">
                             {{ prod_uct.featured_image | image_url: width: 100, height: 100 | image_tag: class:"upsell__img" }}
@@ -88,7 +88,6 @@
     document.addEventListener('DOMContentLoaded', function() {
         const upsellItemsContainer = document.querySelector('[js-upsell-items-container]');
         const upsellItems = upsellItemsContainer.querySelectorAll('input');
-        console.log({upsellItemsContainer}, {upsellItems}, upsellItems.length);
         upsellItems.length && upsellItems.forEach((x) => {
             x.addEventListener('change', function(e) {
                 const { currentTarget } = e;
