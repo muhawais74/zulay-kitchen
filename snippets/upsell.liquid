@@ -47,6 +47,7 @@
     <div class="pdp__upsell-wrapper">
         {% for upsell in product.metafields.product.pdp_upsell.value %}
             <div class="upsell__items-container">
+                <h3>You may like</h3>
                 {% for prod_uct in upsell.product.value %}
                     <input type="checkbox" name="{{ prod_uct.handle }}" id="{{ prod_uct.handle }}--{{ forloop.index }}">
                     <label class="upsell__item" for="{{ prod_uct.handle }}--{{ forloop.index }}">
