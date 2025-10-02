@@ -85,7 +85,9 @@
                         </div>
                         <div class="checkbox__dot">
                         </div>
-                        <span class="upsell__soldout">soldout</span>
+                        {% if prod_uct.selected_or_first_available_variant.available == false %}
+                            <span class="upsell__soldout">soldout</span>
+                        {% endif %}
                     </label>
                 {% endfor %}
             </div>
