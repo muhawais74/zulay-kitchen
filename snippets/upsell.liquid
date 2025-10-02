@@ -17,6 +17,9 @@
         justify-content: space-between;
         position: relative;
     }
+    .upsell__item:has(.upsell__soldout) {
+        pointer-events: none;
+    }
     .upsell__item .upsell__soldout {
         position: absolute;
         right: 0;
