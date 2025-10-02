@@ -7857,7 +7857,7 @@ scroll-carousel:not(.adaptive-height)  .product-gallery__media video-media{
   text-transform: var(--heading-text-transform);
   overflow-wrap: anywhere;
 }
-.landing-page--container h1
+.landing-page--container h1,
 .landing-page--container h2,
 .landing-page--container h3,
 .landing-page--container h4,
