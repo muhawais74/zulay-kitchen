@@ -8025,6 +8025,6 @@ ul {
 @media screen and (min-width: 1000px) {
   .product-gallery {
     position: sticky;
-    top: 60px;
+    top: 80px;
   }
 }
