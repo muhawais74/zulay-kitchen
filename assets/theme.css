@@ -7857,6 +7857,19 @@ scroll-carousel:not(.adaptive-height)  .product-gallery__media video-media{
   text-transform: var(--heading-text-transform);
   overflow-wrap: anywhere;
 }
+.landing-page--container h1,
+.landing-page--container h2,
+.landing-page--container h3,
+.landing-page--container h4,
+.landing-page--container h5,
+.landing-page--container h6 {
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  letter-spacing: var(--heading-letter-spacing);
+  text-transform: var(--heading-text-transform);
+  overflow-wrap: anywhere;
+}
 
 .h1, :where(.prose h1) {
   font-size: var(--text-h1);
