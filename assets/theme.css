@@ -5951,10 +5951,6 @@ label.color-swatch.is-disabled {
   .product {
     --product-gap: 3.5rem;
   }
-  .product-gallery {
-    position: sticky;
-    top: 60px;
-  }
 }
 
 @media screen and (min-width: 1150px) {
