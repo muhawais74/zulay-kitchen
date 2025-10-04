@@ -8021,3 +8021,10 @@ ul {
 .product-card .rating-badge .rating-badge__stars path {
   fill: rgb(249, 174, 60);
 }
+
+@media screen and (min-width: 1000px) {
+  .product-gallery {
+    position: sticky;
+    top: 60px;
+  }
+}
