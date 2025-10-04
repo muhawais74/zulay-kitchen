@@ -13,7 +13,7 @@
         </div>
         <div class="landing__banner">
             {% if page.metafields.custom.landing_page_media != blank %}
-                {{ page.metafields.custom.landing_page_media | image_url: width: 1200, height: 650 | image_tag: class: 'landing__page-banner--image' }}
+                {{ page.metafields.custom.landing_page_media | image_url: width: 1200, height: 650 | image_tag: class: 'landing__page-banner--image', loading: 'lazy' }}
             {% endif %}
         </div>
         <div class="landing__description">
