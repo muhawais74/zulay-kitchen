@@ -5951,6 +5951,10 @@ label.color-swatch.is-disabled {
   .product {
     --product-gap: 3.5rem;
   }
+  .product-gallery {
+    position: sticky;
+    top: 60px;
+  }
 }
 
 @media screen and (min-width: 1150px) {
@@ -5970,10 +5974,7 @@ label.color-swatch.is-disabled {
   display: flex;
   position: relative;
 }
-.product-gallery {
-  position: sticky;
-  top: 60px;
-}
+
 .product-gallery__zoom-button {
   z-index: 1;
   transition: opacity .2s, visibility .2s;
