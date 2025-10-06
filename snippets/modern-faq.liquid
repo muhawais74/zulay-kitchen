@@ -1,9 +1,6 @@
 {{ 'modern-faq.css' | asset_url | stylesheet_tag }}
 {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
-test -- {% for x in   page.metafields.custom.faqs_list.value %} 
-            s: {{ x.image.value }}
-        {% endfor %}
-p
+
 <div class="section-spacing section-spacing--tight color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
     <div class="modern__faq container container--md">
         <div class="title__desc-wrapper">
@@ -19,13 +16,13 @@ p
                 {% for accordion in page.metafields.custom.faqs_list.value %}
                     {% if accordion.image != blank %}
                         <div class="image">
-                            {{ accordion.image | image_url: width: 300 | image_tag: class: 'accordion__image' , data-index: forloop.index  }}
+                            {{ accordion.image.value | image_url: width: 300 | image_tag: class: 'accordion__image' , data-index: forloop.index  }}
                         </div>
                         {% break %}
                     {% endif %}
                 {% endfor %}
                 <div class="accordion__content">
-                    {% for accordion_b in page.metafields.custom.faqs_list.values %}
+                    {% for accordion_b in page.metafields.custom.faqs_list.value %}
                         o: {{ accordion_b }}
                         {% render 'modern-accordion', title: block.settings.question, content: block.settings.answer, index: forloop.index , image_input: block.settings.image %}
                     {% endfor %}
