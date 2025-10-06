@@ -6,7 +6,7 @@
         </span>
     </div>
     {% if snippet_faq == true %}
-        s: {{ content }}
+        s: {{ content | metafield_tag }}
     {% endif %}
     <div class="accordion-content">
         <p>{{  content }}</p>
