@@ -112,7 +112,7 @@
                 "name": "{{ accordion_b.question.value }}",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "{{ accordion_b.answer | metafield_tag | strip_newlines | escape }}"
+                    "text": "{{ accordion_b.answer | metafield_tag | strip_html | strip_newlines | escape }}"
                 }
             }{% unless forloop.last %},{% endunless %}
         {% endfor %}
