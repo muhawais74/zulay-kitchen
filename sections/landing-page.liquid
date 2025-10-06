@@ -88,7 +88,7 @@
       "@type": "Product",
       "name": "{{ product.title }}",
       "image": "{{ product.featured_image | image_url: width: 200 }}",
-      "description": "Durable, sleek, and accurate wireless meat thermometer that connects to your phone.",
+      "description": "{{ product.description }}",
       "sku": "{{ product.selected_or_first_available_variant.sku }}",
       "brand": {
         "@type": "Brand",
