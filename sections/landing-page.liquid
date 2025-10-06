@@ -83,24 +83,26 @@
       "description": "{{ page.metafields.custom.mini_article | metafield_tag }}",
       "datePublished": "2025-10-01"
     },
+    {% for product in page.metafields.custom.products_list.value %}
     {
       "@type": "Product",
-      "name": "Grill Tech Wireless Meat Thermometer",
-      "image": "https://www.grilltech.us/cdn/shop/products/thermometer.jpg",
+      "name": "{{ product.title }}",
+      "image": "{{ product.featured_image | image_url: width: 200 }}",
       "description": "Durable, sleek, and accurate wireless meat thermometer that connects to your phone.",
-      "sku": "GT-THERMO-01",
+      "sku": "{{ product.selected_or_first_available_variant.sku }}",
       "brand": {
         "@type": "Brand",
-        "name": "Grill Tech"
+        "name": "Zulay Kitchen"
       },
       "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
-        "price": "79.99",
+        "price": "{{product.selected_or_first_available_variant.price | money }}",
         "availability": "https://schema.org/InStock",
-        "url": "https://www.grilltech.us/products/wireless-meat-thermometer"
+        "url": "{{ product.url }}"
       }
-    },
+    } {% unless forloop.last == true %}, {% endunless %}
+    {% endfor %}
     {
       "@type": "FAQPage",
       "mainEntity": [
