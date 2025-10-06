@@ -69,7 +69,7 @@
         "@type": "Organization",
         "name": "Zulay Kitchen"
       },
-      "description": "{{ page.content }}",
+      "description": "{{ page.content | strip_html }}",
       "datePublished": "2025-10-01"
     },
     {
@@ -79,7 +79,7 @@
         "@type": "Organization",
         "name": "Zulay Kitchen"
       },
-      "description": "abc",
+      "description": "{{ page.metafields.custom.mini_article | metafield_tag | strip_html }}",
       "datePublished": "2025-10-01"
     },
     {% for product in page.metafields.custom.products_list.value %}
