@@ -104,22 +104,16 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How does the wireless meat thermometer work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The thermometer connects to your phone via Bluetooth, sending real-time temperature updates while your food cooks."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is the thermometer safe for oven use?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, it is heat-resistant and designed for both grill and oven cooking."
-          }
-        }
+        {% for accordion_b in page.metafields.custom.faqs_list.value %}
+            {
+                "@type": "Question",
+                "name": "{{ accordion_b.question.value }}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{ accordion_b.answer | metafield_tag }}"
+                }
+            }
+        {% endfor %}
       ]
     }
   ]
