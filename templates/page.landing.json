@@ -28,6 +28,7 @@
     },
     "modern_faq_NTG6dx": {
       "type": "modern-faq",
+      "disabled": true,
       "blocks": {
         "accordion_JnjAXq": {
           "type": "accordion",
