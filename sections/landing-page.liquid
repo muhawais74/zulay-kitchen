@@ -1,7 +1,6 @@
 {{ 'landing-page.css' | asset_url | stylesheet_tag }}
 
 {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
-
 <div class="section-spacing section-spacing--tight color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
     <div class="landing-page--container container container--md">
         <div class="landing__title">
@@ -54,7 +53,74 @@
             </div>
         {% endif %}
     </div>
+    {% render 'modern-faq', page: page %}
 </div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{ page.metafields.custom.page_title }}",
+  "url": "https://www.zulaykitchen.com{{ page.url }}",
+  "mainEntity": [
+    {
+      "@type": "Article",
+      "headline": "Kitchen Happiness",
+      "author": {
+        "@type": "Organization",
+        "name": "Zulay Kitchen"
+      },
+      "description": "{{ page.content | strip_newlines | escape }}",
+      "datePublished": "2025-10-01"
+    },
+    {
+      "@type": "Article",
+      "headline": "Kitchen Happiness",
+      "author": {
+        "@type": "Organization",
+        "name": "Zulay Kitchen"
+      },
+      "description": "{{ page.metafields.custom.mini_article | metafield_tag | strip_newlines | escape }}",
+      "datePublished": "2025-10-01"
+    },
+    {% for product in page.metafields.custom.products_list.value %}
+    {
+      "@type": "Product",
+      "name": "{{ product.title }}",
+      "image": "{{ product.featured_image | image_url: width: 200 }}",
+      "description": "{{ product.description | strip_html | strip_newlines | escape }}",
+      "sku": "{{ product.selected_or_first_available_variant.sku }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "Zulay Kitchen"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "{{product.selected_or_first_available_variant.price | money }}",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.zulaykitchen.com{{ product.url }}"
+      }
+    } {% unless forloop.last == true %}, {% endunless %}
+    {% endfor %}
+    ,
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {% for accordion_b in page.metafields.custom.faqs_list.value %}
+            {
+                "@type": "Question",
+                "name": "{{ accordion_b.question.value }}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{ accordion_b.answer | metafield_tag | strip_newlines | escape }}"
+                }
+            }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>
 {% schema %}
 {
     "name": "Landing Page",
