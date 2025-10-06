@@ -155,5 +155,44 @@
 {%- endif -%}
 {%- comment -%} End of Tapita Meta Data {%- endcomment -%}
 {%- comment -%} Start of assets preloading {%- endcomment -%}
-
+{%- liquid
+    assign template_assets = ''
+    assign current_template = template.name
+    assign preload_assets = ''
+  assign all_assets = 'vendor.min.js,theme.js,photoswipe.min.js,theme.css'
+  if current_template == 'index'
+                assign template_assets = 'modern-faq.css'
+            endif
+                  assign preload_assets = ''
+  if all_assets != blank
+    assign preload_assets = all_assets
+  endif
+  
+  if template_assets != blank
+    if preload_assets != blank
+      assign preload_assets = preload_assets | append: ',' | append: template_assets
+    else
+      assign preload_assets = template_assets
+    endif
+  endif
+-%}
+{%- if preload_assets != blank -%}
+  {%- assign assets_array = preload_assets | split: ',' -%}
+  {%- for asset in assets_array -%}
+    {%- liquid
+      assign asset_trimmed = asset | strip
+      assign asset_ext = asset_trimmed | split: '.' | last | downcase
+      assign asset_url = asset_trimmed | asset_url
+      
+      case asset_ext
+        when 'css', 'scss', 'sass', 'less'
+          echo '<link rel="preload" href="' | append: asset_url | append: '" as="style">'
+        when 'js'
+          echo '<link rel="preload" href="' | append: asset_url | append: '" as="script">'
+        when 'woff', 'woff2', 'ttf', 'eot'
+          echo '<link rel="preload" href="' | append: asset_url | append: '" as="font" type="font/' | append: asset_ext | append: '" crossorigin>'
+      endcase
+    -%}
+  {%- endfor -%}
+{%- endif -%}
 {%- comment -%} End of of assets preloading {%- endcomment -%}
