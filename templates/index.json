@@ -66,7 +66,7 @@
         "show_video": false,
         "image": "shopify://shop_images/Citrus_press_deesktop_banner.webp",
         "mobile_image": "shopify://shop_images/citrus_press_mobile_banner.webp",
-        "media_size": "lg",
+        "media_size": "auto",
         "show_initial_transition": false,
         "autoplay": true,
         "autoplay_pause_on_video": true,
