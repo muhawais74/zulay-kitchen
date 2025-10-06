@@ -23,7 +23,7 @@ test -- {{  page.metafields.custom.faqs_list }} p
                     {% endif %}
                 {% endfor %}
                 <div class="accordion__content">
-                    {% for accordion_b in page.metafields.custom.faqs_list.value %}
+                    {% for accordion_b in page.metafields.custom.faqs_list.values %}
                         o: {{ accordion_b }}
                         {% render 'modern-accordion', title: block.settings.question, content: block.settings.answer, index: forloop.index , image_input: block.settings.image %}
                     {% endfor %}
