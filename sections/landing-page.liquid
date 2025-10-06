@@ -80,7 +80,7 @@
         "@type": "Organization",
         "name": "Zulay Kitchen"
       },
-      "description": "{{ page.metafields.custom.mini_article.value | strip_html | escape }}",
+      "description": "{{ page.metafields.custom.mini_article | metafield_text | strip_html | escape }}",
       "datePublished": "2025-10-01"
     },
     {% for product in page.metafields.custom.products_list.value %}
@@ -113,7 +113,7 @@
                 "name": "{{ accordion_b.question.value }}",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "{{ accordion_b.answer.value | strip_html | escape}}"
+                    "text": "{{ accordion_b.answer | metafield_text | strip_html | escape}}"
                 }
             }{% unless forloop.last %},{% endunless %}
         {% endfor %}
