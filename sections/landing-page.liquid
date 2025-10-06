@@ -112,7 +112,7 @@
                     "@type": "Answer",
                     "text": "{{ accordion_b.answer | metafield_text }}"
                 }
-            }
+            }{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ]
     }
