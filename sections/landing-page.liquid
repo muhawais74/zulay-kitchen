@@ -87,7 +87,7 @@
       "@type": "Product",
       "name": "{{ product.title }}",
       "image": "{{ product.featured_image | image_url: width: 200 }}",
-      "description": "{{ product.description | strip_newlines | escape }}",
+      "description": "{{ product.description | strip_html | strip_newlines | escape }}",
       "sku": "{{ product.selected_or_first_available_variant.sku }}",
       "brand": {
         "@type": "Brand",
