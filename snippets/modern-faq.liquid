@@ -13,7 +13,8 @@ test -- {{  page.metafields.custom.faqs_list }} p
         </div>
         {% if section.blocks.size > 0 %}
             <div class="accordion__wrapper" js-accordion-image-wrapper>
-                {% for block in section.blocks %}
+                {% for accordion in page.metafields.custom.faqs_list.value %}
+                    d: {{ accordion }}
                     {% if block.settings.image != blank %}
                         <div class="image">
                             {{ block.settings.image | image_url: width: 300 | image_tag: class: 'accordion__image' , data-index: forloop.index  }}
