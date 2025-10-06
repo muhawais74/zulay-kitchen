@@ -6,9 +6,12 @@
         </span>
     </div>
     {% if snippet_faq == true %}
-        s: {{ content | metafield_tag }}
+        <div class="accordion-content">
+            {{ content | metafield_tag }}
+        </div>
+    {% else %}
+        <div class="accordion-content">
+            <p>{{  content }}</p>
+        </div>
     {% endif %}
-    <div class="accordion-content">
-        <p>{{  content }}</p>
-    </div>
 </div>
