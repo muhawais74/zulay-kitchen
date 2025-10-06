@@ -98,7 +98,7 @@
         "priceCurrency": "USD",
         "price": "{{product.selected_or_first_available_variant.price | money }}",
         "availability": "https://schema.org/InStock",
-        "url": "{{ product.url }}"
+        "url": "https://www.zulaykitchen.com/{{ product.url }}"
       }
     } {% unless forloop.last == true %}, {% endunless %}
     {% endfor %}
