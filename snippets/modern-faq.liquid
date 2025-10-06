@@ -1,7 +1,7 @@
 {{ 'modern-faq.css' | asset_url | stylesheet_tag }}
 {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 test -- {% for x in   page.metafields.custom.faqs_list.value %} 
-            s: {{ x }}
+            s: {{ x.image }}
         {% endfor %}
 p
 <div class="section-spacing section-spacing--tight color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
