@@ -5228,6 +5228,7 @@ product-rerender {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .mega-menu--reverse {
   flex-direction: row-reverse;
