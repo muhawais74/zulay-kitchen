@@ -5,11 +5,11 @@
     <div class="modern__faq container container--md">
         <div class="title__desc-wrapper">
             <h2 class="title h2">
-                {{ section.settings.title }}
+                {{ page.title }}
             </h2>
-            <p class="description">
+            {% comment %} <p class="description">
                 {{ section.settings.description }}
-            </p>
+            </p> {% endcomment %}
         </div>
         <div class="accordion__wrapper" js-accordion-image-wrapper>
             {% for accordion in page.metafields.custom.faqs_list.value %}
