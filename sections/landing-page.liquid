@@ -20,6 +20,7 @@
         </div>
         <div class="selected__products-list">
             {% if page.metafields.custom.products_list != blank %}
+                ds
                 <div class="landing__product-card">
                     {% for product in page.metafields.custom.products_list.value %}
                         {% assign form_id = 'product-form-main-{{ section.id }}-{{ forloop.index }}' %}
