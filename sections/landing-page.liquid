@@ -22,7 +22,6 @@
             {% if page.metafields.custom.products_list != blank %}
                 <div class="landing__product-card">
                     {% for product in page.metafields.custom.products_list.value %}
-                        s: {{ product.title }}
                         {% assign form_id = 'product-form-main-{{ section.id }}-{{ forloop.index }}' %}
                         <product-form>
                             <form method="post" action="/cart/add" id="{{ form_id }}" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data">
