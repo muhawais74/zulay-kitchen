@@ -19,33 +19,31 @@
             {{ page.content }}
         </div>
         <div class="selected__products-list">
-            {% if page.metafields.custom.products_list != blank %}
-                <div class="landing__product-card">
-                    {% for product in page.metafields.custom.products_list.value %}
-                        {% assign form_id = 'product-form-main-{{ section.id }}-{{ forloop.index }}' %}
-                        <product-form>
-                            <form method="post" action="/cart/add" id="{{ form_id }}" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data">
-                                <div class="landing__card">
-                                    <div class="image">
-                                        {{ product.featured_image | image_url: width: 400 | image_tag: class: 'landing__image' }}
-                                    </div>
-                                    <div class="price__title-wrapper">
-                                        <a href="{{  product.url }}">
-                                            <div class="price">
-                                                {{ product.price | money }}
-                                            </div>
-                                            <div class="title">
-                                                {{  product.title }}
-                                            </div>
-                                        </a>
-                                    </div>
-                                    {% render 'buy-buttons' , product: product, show_payment_button: false, form_id: form_id %}
+            <div class="landing__product-card">
+                {% for product in page.metafields.custom.products_list.value %}
+                    {% assign form_id = 'product-form-main-{{ section.id }}-{{ forloop.index }}' %}
+                    <product-form>
+                        <form method="post" action="/cart/add" id="{{ form_id }}" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data">
+                            <div class="landing__card">
+                                <div class="image">
+                                    {{ product.featured_image | image_url: width: 400 | image_tag: class: 'landing__image' }}
                                 </div>
-                            </form>
-                        </product-form>
-                    {% endfor %}
-                </div>
-            {% endif %}
+                                <div class="price__title-wrapper">
+                                    <a href="{{  product.url }}">
+                                        <div class="price">
+                                            {{ product.price | money }}
+                                        </div>
+                                        <div class="title">
+                                            {{  product.title }}
+                                        </div>
+                                    </a>
+                                </div>
+                                {% render 'buy-buttons' , product: product, show_payment_button: false, form_id: form_id %}
+                            </div>
+                        </form>
+                    </product-form>
+                {% endfor %}
+            </div>
         </div>
         {% if page.metafields.custom.mini_article != blank %}
             <div class="landing__mini-article">
