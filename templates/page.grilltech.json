@@ -55,80 +55,43 @@
         "remove_vertical_spacing": false
       }
     },
-    "media_grid_mYacPf": {
-      "type": "media-grid",
+    "image_with_text_6pjLnR": {
+      "type": "image-with-text",
       "blocks": {
-        "image_ktG6U4": {
-          "type": "image",
+        "subheading_M6xX4b": {
+          "type": "subheading",
           "settings": {
-            "color_scheme": "",
-            "image": "shopify://shop_images/Grill_Tech_Lifestyle_1.jpg",
-            "column_count": "8",
-            "row_count": 2,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "text": "Subheading"
           }
         },
-        "image_yDdnrQ": {
-          "type": "image",
+        "heading_7QrdEg": {
+          "type": "heading",
           "settings": {
-            "color_scheme": "",
-            "image": "shopify://shop_images/Grill_Tech_Lifestyle_4.jpg",
-            "column_count": "4",
-            "row_count": 1,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "text": "Image with text",
+            "heading_tag": "h1"
           }
         },
-        "image_ngtXGK": {
-          "type": "image",
+        "richtext_BenJJU": {
+          "type": "richtext",
           "settings": {
-            "color_scheme": "",
-            "image": "shopify://shop_images/Grill_Tech_Lifestyle_3.jpg",
-            "column_count": "4",
-            "row_count": 1,
-            "title": "",
-            "heading_tag": "h4",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "link_style": "link",
-            "text_position": "place-self-center text-center",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
           }
         }
       },
       "block_order": [
-        "image_ktG6U4",
-        "image_yDdnrQ",
-        "image_ngtXGK"
+        "subheading_M6xX4b",
+        "heading_7QrdEg",
+        "richtext_BenJJU"
       ],
-      "name": "t:sections.media_grid.presets.media_grid.name",
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
-        "desktop_row_height": 290,
-        "mobile_row_height": 180,
-        "section_width": "lg",
-        "spacing": "md",
-        "subheading": "",
-        "title": "Wireless Meat Thermometer",
-        "content": ""
+        "image": "shopify://shop_images/Grill_Tech_Lifestyle_1.jpg",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": true
       }
     },
     "multi_column_3Anb4W": {
@@ -180,7 +143,7 @@
   "order": [
     "main",
     "rich_text_C8jgmg",
-    "media_grid_mYacPf",
+    "image_with_text_6pjLnR",
     "multi_column_3Anb4W"
   ]
 }
