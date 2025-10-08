@@ -124,7 +124,7 @@
         "separate_section_with_border": true,
         "desktop_row_height": 290,
         "mobile_row_height": 180,
-        "section_width": "lg",
+        "section_width": "full",
         "spacing": "md",
         "subheading": "",
         "title": "Wireless Meat Thermometer",
@@ -170,7 +170,7 @@
         "overlap_image": false,
         "content_alignment": "center",
         "text_alignment": "center",
-        "spacing": "sm",
+        "spacing": "md",
         "subheading": "",
         "title": "",
         "content": ""
