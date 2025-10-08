@@ -55,43 +55,59 @@
         "remove_vertical_spacing": false
       }
     },
-    "image_with_text_6pjLnR": {
-      "type": "image-with-text",
+    "timeline_pQQ47X": {
+      "type": "timeline",
       "blocks": {
-        "subheading_M6xX4b": {
-          "type": "subheading",
+        "item_fwhYKj": {
+          "type": "item",
           "settings": {
-            "text": "Subheading"
+            "label": "2000",
+            "subheading": "Subheading",
+            "title": "2000",
+            "content": "<p>Use this text to share information about what happened to your brand at a specific time.</p>",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "mobile_text_color": "#ffffff"
           }
         },
-        "heading_7QrdEg": {
-          "type": "heading",
+        "item_dDFftw": {
+          "type": "item",
           "settings": {
-            "text": "Image with text",
-            "heading_tag": "h1"
+            "label": "2010",
+            "subheading": "Subheading",
+            "title": "2010",
+            "content": "<p>Use this text to share information about what happened to your brand at a specific time.</p>",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "mobile_text_color": "#ffffff"
           }
         },
-        "richtext_BenJJU": {
-          "type": "richtext",
+        "item_GcVDbh": {
+          "type": "item",
           "settings": {
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            "label": "2020",
+            "subheading": "Subheading",
+            "title": "2020",
+            "content": "<p>Use this text to share information about what happened to your brand at a specific time.</p>",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "mobile_text_color": "#ffffff"
           }
         }
       },
       "block_order": [
-        "subheading_M6xX4b",
-        "heading_7QrdEg",
-        "richtext_BenJJU"
+        "item_fwhYKj",
+        "item_dDFftw",
+        "item_GcVDbh"
       ],
-      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "name": "t:sections.timeline.presets.timeline.name",
       "settings": {
         "color_scheme": "",
-        "separate_section_with_border": true,
-        "image": "shopify://shop_images/Grill_Tech_Lifestyle_1.jpg",
-        "reveal_on_scroll": true,
-        "image_position": "start",
-        "content_width": "sm",
-        "remove_vertical_spacing": true
+        "item_color_scheme": "",
+        "separate_section_with_border": true
       }
     },
     "multi_column_3Anb4W": {
@@ -143,7 +159,7 @@
   "order": [
     "main",
     "rich_text_C8jgmg",
-    "image_with_text_6pjLnR",
+    "timeline_pQQ47X",
     "multi_column_3Anb4W"
   ]
 }
