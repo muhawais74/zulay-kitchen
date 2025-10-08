@@ -164,13 +164,13 @@
       "name": "t:sections.multi_column.presets.multi_column.name",
       "settings": {
         "color_scheme": "",
-        "separate_section_with_border": true,
+        "separate_section_with_border": false,
         "columns_per_row": 2,
-        "stack_on_mobile": false,
+        "stack_on_mobile": true,
         "overlap_image": false,
         "content_alignment": "center",
         "text_alignment": "center",
-        "spacing": "md",
+        "spacing": "sm",
         "subheading": "",
         "title": "",
         "content": ""
